@@ -15,9 +15,7 @@ function Hero() {
             <div class="caption">
                 <h6 className=''>Use our resume builder to create a resume in 15 minutes</h6>
                 <h2><em>Build</em> your perfect CV</h2>
-                <div class="main-button">
-                    <div class="scroll-to-section"><a href="#section2">Build my resume</a></div>
-                </div>
+                    <button className="main-button rounded-3 border-0 py-2 px-3"><a href="/" className='text-decoration-none'>Build my resume</a></button>
             </div>
         </div>
     </section>
