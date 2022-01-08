@@ -2,7 +2,7 @@ import React, { Component,Fragment } from 'react'
 import Navbar from './components/NavBar/navbar';
 import HeroContent from './components/HeroContent/heroContent';
 import WhyUs from './components/WhyUs/whyUs'
-import Carousel  from './components/Carousel/carousel';
+import Card from './components/Card/Card';
 import ComingSoon from './components/ComingSoon/comingSoon';
 import LearnMore from './components/LearnMore/learnMore';
 import Footer from './components/Footer/footer';
@@ -16,7 +16,7 @@ export class App extends Component {
             <HeroContent/>
             <WhyUs/>
             <ComingSoon/>
-            <Carousel/>
+            <Card/>
             <LearnMore/>
             <Faqs/>
             <Footer/>

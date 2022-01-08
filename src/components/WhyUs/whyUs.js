@@ -12,14 +12,14 @@ export class whyus extends Component {
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading text-center mb-5">
-                        <h2>Why choose Grad School?</h2>
+                        <h2>Why choose Resume Builder?</h2>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div id='tabs'>
                         <ul>
                             <li><a href='#tabs-1'>Professional Resumes</a></li>
-                            <li><a href='#tabs-2'>Top Management</a></li>
+                            <li><a href='#tabs-2'>Safe Time</a></li>
                             <li><a href='#tabs-3'>Quality Resume</a></li>
                         </ul>
                         <section class='tabs-content'>
@@ -48,7 +48,7 @@ export class whyus extends Component {
                                         <img src={imageTwo} alt="" />
                                     </div>
                                     <div class="col-md-6">
-                                        <h4>Top Level</h4>
+                                        <h4>Safe Time</h4>
                                         <p>To help you present a perfect resume in today’s job market, Resume Genius is proud to present our users an exclusive “Ask an Expert” service, featuring a real time 1-on-1 Certified Professional Resume Expert. Our online Certified Resume Expert will review your resume for accuracy and clarity. You will get recommendations on how to improve your resume, dramatically increasing your interview call-back rates.</p>
                                     </div>
                                 </div>
