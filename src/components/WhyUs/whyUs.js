@@ -16,14 +16,14 @@ export class whyus extends Component {
                     </div>
                 </div>
                 <div className="col-md-12">
-                    <div id='tabs'>
+                    <div>
                         <ul>
                             <li><a href='#tabs-1'>Professional Resumes</a></li>
                             <li><a href='#tabs-2'>Safe Time</a></li>
                             <li><a href='#tabs-3'>Quality Resume</a></li>
                         </ul>
                         <section className='tabs-content'>
-                            <article id='tabs-1'>
+                            <article >
                                 <div className="row">
                                     <div className="col-md-6">
                                         <img src={imageOne} alt="" />
@@ -42,7 +42,7 @@ export class whyus extends Component {
                                     </div>
                                 </div>
                             </article>
-                            <article id='tabs-2'>
+                            <article >
                                 <div className="row">
                                     <div className="col-md-6">
                                         <img src={imageTwo} alt="" />
@@ -53,7 +53,7 @@ export class whyus extends Component {
                                     </div>
                                 </div>
                             </article>
-                            <article id='tabs-3'>
+                            <article >
                                 <div className="row">
                                     <div className="col-md-6">
                                         <img src={imageThree} alt="" />

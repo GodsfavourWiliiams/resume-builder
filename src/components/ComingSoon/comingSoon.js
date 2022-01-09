@@ -48,22 +48,22 @@ export class comingSoon extends Component {
                             <div className="row">
                                 <div className="col-md-12">
                                     <fieldset>
-                                        <input name="name" type="text" className="form-control" id="name" placeholder="Your Name" required="" />
+                                        <input name="name" type="text" className="form-control" placeholder="Your Name" required="" />
                                     </fieldset>
                                 </div>
                                 <div className="col-md-12">
                                     <fieldset>
-                                        <input name="email" type="text" className="form-control" id="email" placeholder="Your Email" required="" />
+                                        <input name="email" type="text" className="form-control"  placeholder="Your Email" required="" />
                                     </fieldset>
                                 </div>
                                 <div className="col-md-12">
                                     <fieldset>
-                                        <input name="phone-number" type="text" className="form-control" id="phone-number" placeholder="Your Phone Number" required="" />
+                                        <input name="phone-number" type="text" className="form-control" placeholder="Your Phone Number" required="" />
                                     </fieldset>
                                 </div>
                                 <div className="col-md-12">
                                     <fieldset>
-                                        <button type="submit" id="form-submit" className="button">Get it now</button>
+                                        <button type="submit" className="button">Get it now</button>
                                     </fieldset>
                                 </div>
                             </div>

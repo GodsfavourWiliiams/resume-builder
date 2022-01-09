@@ -14,8 +14,8 @@ function Hero() {
   return (
     // first section
   <div className="">
-       <section className="section main-banner" id="top" data-section="section1">
-        <video autoPlay={true} muted loop id="bg-video">
+       <section className="section main-banner" data-section="section1">
+        <video autoPlay={true} muted loop>
           <source src={Video} type="video/mp4" />
       </video>
 
@@ -33,7 +33,7 @@ function Hero() {
             <div className="row">
                 <div className="col-lg-4 col-12">
                     <div className="features-post">
-                        <div className="features-content">
+                        <div className="featurefs-content">
                             <div className={``} onClick={() => toggle()}>
                                 <h4 className="">50,000+ job </h4>
                             </div>
