@@ -131,11 +131,11 @@ export default class Footer extends Component{
   </div>
 
   <div className='mini-footer'>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p><i class="fa fa-copyright"></i> Copyright 2020 by Resume Builder | Design:
-                        <a href="#" rel="sponsored" target="_parent">Williams Godsfavour</a>
+        <div className="container">
+            <div className="row">
+                <div className="col-md-12">
+                    <p><i className="fa fa-copyright"></i> Copyright 2020 by Resume Builder | Design:
+                        <a href="/" rel="sponsored" target="_parent">Williams Godsfavour</a>
 
                     </p>
                 </div>

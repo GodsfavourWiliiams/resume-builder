@@ -7,11 +7,11 @@ const Navbar = () => {
   return (
 <header className="fixed-top header">
   <div className="Navbar container main-header">
- <div class="logo fw-bold">
+ <div className="logo fw-bold">
       <a href="/" className="text-warning text-decoration-none"><span className="text-white">Resume</span> Builder</a>
   </div>
     <nav className={`nav-items main-nav  ${isOpen && "open"}`}>
-      <ul class="main-menu">
+      <ul className="main-menu">
           <li><a href="/" className="text-decoration-none">Home</a></li>
           <li><a href="/" className="text-decoration-none">About Us</a></li>
           <li><a href="/" className="text-decoration-none">Courses</a></li>

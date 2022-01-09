@@ -6,32 +6,32 @@ export class comingSoon extends Component {
     render() {
         return (
             <div>
-                    <section class="section coming-soon" data-section="section3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-xs-12">
-                    <div class="continer centerIt">
+                    <section className="section coming-soon">
+        <div className="container">
+            <div className="row">
+                <div className="col-md-7 col-xs-12">
+                    <div className="continer centerIt">
                         <div>
-                            <h4>Take <em>any online course</em> and win $326 for your next class</h4>
-                            <div class="counter">
+                            <h4>Take <em>any online course</em> and win $326 for your next resume</h4>
+                            <div className="counter">
 
-                                <div class="days">
-                                    <div class="value">00</div>
+                                <div className="days">
+                                    <div className="value">00</div>
                                     <span>Days</span>
                                 </div>
 
-                                <div class="hours">
-                                    <div class="value">00</div>
+                                <div className="hours">
+                                    <div className="value">00</div>
                                     <span>Hours</span>
                                 </div>
 
-                                <div class="minutes">
-                                    <div class="value">00</div>
+                                <div className="minutes">
+                                    <div className="value">00</div>
                                     <span>Minutes</span>
                                 </div>
 
-                                <div class="seconds">
-                                    <div class="value">00</div>
+                                <div className="seconds">
+                                    <div className="value">00</div>
                                     <span>Seconds</span>
                                 </div>
 
@@ -39,31 +39,31 @@ export class comingSoon extends Component {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class="right-content">
-                        <div class="top-content">
-                            <h6>Register your free account and <em>get immediate</em> access to online courses</h6>
+                <div className="col-md-5">
+                    <div className="right-content">
+                        <div className="top-content">
+                            <h6 className='text-white'>Register your free account and <span className='text-warning'>get immediate</span> access to our free cv templates</h6>
                         </div>
-                        <form id="contact" action="" method="get">
-                            <div class="row">
-                                <div class="col-md-12">
+                        <form>
+                            <div className="row">
+                                <div className="col-md-12">
                                     <fieldset>
-                                        <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required="" />
+                                        <input name="name" type="text" className="form-control" id="name" placeholder="Your Name" required="" />
                                     </fieldset>
                                 </div>
-                                <div class="col-md-12">
+                                <div className="col-md-12">
                                     <fieldset>
-                                        <input name="email" type="text" class="form-control" id="email" placeholder="Your Email" required="" />
+                                        <input name="email" type="text" className="form-control" id="email" placeholder="Your Email" required="" />
                                     </fieldset>
                                 </div>
-                                <div class="col-md-12">
+                                <div className="col-md-12">
                                     <fieldset>
-                                        <input name="phone-number" type="text" class="form-control" id="phone-number" placeholder="Your Phone Number" required="" />
+                                        <input name="phone-number" type="text" className="form-control" id="phone-number" placeholder="Your Phone Number" required="" />
                                     </fieldset>
                                 </div>
-                                <div class="col-md-12">
+                                <div className="col-md-12">
                                     <fieldset>
-                                        <button type="submit" id="form-submit" class="button">Get it now</button>
+                                        <button type="submit" id="form-submit" className="button">Get it now</button>
                                     </fieldset>
                                 </div>
                             </div>

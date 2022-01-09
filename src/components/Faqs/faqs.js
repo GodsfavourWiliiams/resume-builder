@@ -40,31 +40,31 @@ function Accordion() {
       setselected(i)
     }
     return (
- <div className='accordion-faqs text-center text-white'>
-             <div class="col-md-12">
-                    <div class="section-heading text-center mb-3">
-                        <h2>FAQ's</h2>
+    <div className='accordion-faqs text-center text-white'>
+                <div className="col-md-12">
+                        <div className="section-heading text-center mb-3">
+                            <h2>FAQ's</h2>
+                        </div>
                     </div>
+          <div className='wrapper rounded-3 text-start'>
+            <div className='items shadow-sm'>
+              {data.map((item, i) => (
+                <div className='item container'>
+                  <div className="faq-title d-flex justify-content-between align-items-center" onClick={() => toggle(i)}>
+                    <h6 className='accordion-body '>key={item.question}</h6>
+                  <span className='fw-bold pb-3 pe-4 faq-body'>{selected === i ? '-' : '+'}</span>
+                  </div>
+                  <div className='px-3'>
+                    <p className={selected === i ? 'content show text-secondary' : 'content'}>
+                      key={item.answer}
+                    </p>
+                  </div>
                 </div>
-      <div className='wrapper rounded-3 text-start'>
-        <div className='items shadow-sm'>
-          {data.map((item, i) => (
-            <div className='item container'>
-              <div className="faq-title d-flex justify-content-between align-items-center" onClick={() => toggle(i)}>
-                <h6 className='accordion-body '>{item.question}</h6>
-               <span className='fw-bold pb-3 pe-4 faq-body'>{selected === i ? '-' : '+'}</span>
-              </div>
-              <div className='px-3'>
-                <p className={selected === i ? 'content show text-secondary' : 'content'}>
-                  {item.answer}
-                </p>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+          <button className='border-0 my-5 rounded-3 p-3 fw-bold'>Build My Resume Now</button>
       </div>
-      <button className='border-0 my-5 rounded-3 p-3 fw-bold'>Build My Resume Now</button>
-</div>
     )
   }
   export default Accordion ;
