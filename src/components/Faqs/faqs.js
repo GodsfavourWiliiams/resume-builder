@@ -51,12 +51,12 @@ function Accordion() {
               {data.map((item, i) => (
                 <div className='item container'>
                   <div className="faq-title d-flex justify-content-between align-items-center" onClick={() => toggle(i)}>
-                    <h6 className='accordion-body '>key={item.question}</h6>
+                    <h6 className='accordion-body '>{item.question}</h6>
                   <span className='fw-bold pb-3 pe-4 faq-body'>{selected === i ? '-' : '+'}</span>
                   </div>
                   <div className='px-3'>
                     <p className={selected === i ? 'content show text-secondary' : 'content'}>
-                      key={item.answer}
+                    {item.answer}
                     </p>
                   </div>
                 </div>

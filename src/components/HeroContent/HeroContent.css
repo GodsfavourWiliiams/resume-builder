@@ -7,7 +7,7 @@
     margin-bottom: -7px;
 }
 
-#bg-video {
+.bg-video {
     min-width: 100%;
     min-height: 100vh;
     max-width: 100%;
@@ -16,7 +16,7 @@
     z-index: -1;
 }
 
-#bg-video::-webkit-media-controls {
+.bg-video::-webkit-media-controls {
     display: none !important;
 }
 

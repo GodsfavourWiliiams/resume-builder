@@ -1,5 +1,5 @@
 import './HeroContent.css';
-import Video from '../images/course-video.mp4';
+import Video from '../images/resume-video.mp4';
 import {useState} from 'react'
 
 
@@ -15,7 +15,7 @@ function Hero() {
     // first section
   <div className="">
        <section className="section main-banner" data-section="section1">
-        <video autoPlay={true} muted loop>
+        <video autoPlay={true} muted loop className="bg-video">
           <source src={Video} type="video/mp4" />
       </video>
 
@@ -33,7 +33,7 @@ function Hero() {
             <div className="row">
                 <div className="col-lg-4 col-12">
                     <div className="features-post">
-                        <div className="featurefs-content">
+                        <div className="features-content">
                             <div className={``} onClick={() => toggle()}>
                                 <h4 className="">50,000+ job </h4>
                             </div>
