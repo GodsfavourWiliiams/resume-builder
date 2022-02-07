@@ -12,7 +12,7 @@ const Navbar = () => {
   </div>
     <nav className={`nav-items main-nav  ${isOpen && "open"}`}>
       <ul className="main-menu">
-          <li><a href="/" className="text-decoration-none">Home</a></li>
+          <li><a href="/" className="text-decoration-none ">Home</a></li>
           <li><a href="/" className="text-decoration-none">About Us</a></li>
           <li><a href="/" className="text-decoration-none">Courses</a></li>
           <li><a href="/" className="text-decoration-none">Video</a></li>

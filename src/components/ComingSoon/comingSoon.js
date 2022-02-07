@@ -12,7 +12,7 @@ export class comingSoon extends Component {
                 <div className="col-md-7 col-xs-12">
                     <div className="continer centerIt">
                         <div>
-                            <h4>Take <em>any online course</em> and win $326 for your next resume</h4>
+                            <h4>Add <em>any template </em> and win $326 for your next resume</h4>
                             <div className="counter">
 
                                 <div className="days">
