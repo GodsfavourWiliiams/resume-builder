@@ -6,14 +6,14 @@ export default class Footer extends Component{
     render() {
         return (
 <Fragment>
-<footer className="footer-area footer--light">
+<footer className="footer-area bg-light">
   <div className="footer-big">
     <div className="container">
       <div className="row">
         <div className="col-md-3 col-sm-12">
           <div className="footer-widget">
             <div className="widget-about">
-              <a href="#n"><span>Resume</span> Builder</a>
+              <a href="/" className='text-decoration-none'><span>Resume</span> Builder</a>
               <ul className="contact-details">
                   <li>
                       <p>

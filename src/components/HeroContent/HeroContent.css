@@ -17,7 +17,7 @@
 }
 
 .bg-video::-webkit-media-controls {
-    display: none !important;
+    display: none ;
 }
 
 .video-overlay {

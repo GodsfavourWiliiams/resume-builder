@@ -3,7 +3,7 @@
     }
     
     a:hover {
-        color: #FC3;
+        color: #4e73df;
         text-decoration: none;
     }
     
@@ -19,13 +19,12 @@
     
     .section-heading {
         text-align: center;
-        margin-bottom: 70px;
     }
     
     .section-heading h2:before {
         width: 1px;
         height: 100px;
-        background-color: rgba(250, 250, 250, 0.1);
+        background-color: rgba(36, 35, 35, 0.1);
         position: absolute;
         top: -102px;
         content: '';
@@ -38,24 +37,24 @@
         position: relative;
         font-size: 18px;
         font-weight: 500;
-        color: #fff;
+        color: #000;
         letter-spacing: 0.5px;
         display: inline-block;
         padding: 15px 20px;
-        border: 2px solid rgba(250, 250, 250, 0.1);
+        border: 2px solid rgba(39, 38, 38, 0.1);
     }
     /* Buttons */
     
     .main-button {
         background-color: #f5a425;
-        color: #fff;
+        color: #000;
         font-size: 13px;
         text-transform: uppercase;
         outline: none;
     }
     
     .main-button a {
-        color: #fff;
+        color: #000;
     }
     
     a.menu-link {
@@ -83,14 +82,14 @@
             margin: 0;
             padding: 0;
             border-top: 1px solid rgba(250, 250, 250, 0.25);
-            background-color: rgba(22, 34, 57, 0.99);
+            background-color: #fff;
         }
         .main-nav li a {
             display: block;
             padding: 15px 0px;
             border-bottom: 1px solid rgba(250, 250, 250, 0.25);
             text-align: center;
-            color: #fff;
+            color: #000;
             font-size: 13px;
             text-transform: uppercase;
             font-weight: 700;
@@ -113,7 +112,7 @@
     }
     
     .header {
-        background-color: rgba(22, 34, 57, 0.95);
+        background-color: #fff;
     }
     
     .main-header .logo a {
@@ -131,7 +130,7 @@
         text-transform: uppercase;
         letter-spacing: 0.5px;
         font-weight: 700;
-        color: #fff;
+        color: #000;
         transition: all 0.5s;
         padding: 10px;
     }

@@ -1,11 +1,11 @@
 /* Why Choosing Us */
 
 section.why-us {
-    background-image: url(../images/choosing-bg.jpg);
-    background-color: #172238;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 100px;
+    /* background-image: url(../images/choosing-bg.jpg); */
+    background-color: #fff;
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* padding-bottom: 100px; */
 }
 
 .tabs {
@@ -45,7 +45,7 @@ section.why-us {
     cursor: pointer;
     outline: 0;
     padding-bottom: 30px;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
@@ -55,7 +55,7 @@ section.why-us {
     transition: all 0.3s;
     width: 10px;
     height: 10px;
-    background-color: #fff;
+    background-color: #000;
     content: '';
     position: absolute;
     left: 50%;
@@ -81,8 +81,6 @@ section.why-us {
     margin-bottom: 0.75em;
 }
 
-.tabs ul .ui-tabs-active {}
-
 .tabs ul .ui-tabs-active a {
     color: #f5a425;
 }
@@ -102,12 +100,12 @@ section.why-us {
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #fff;
+    color: rgb(32, 32, 32);
     margin-bottom: 30px;
 }
 
 .tabs p {
-    color: #fff;
+    color: rgb(58, 57, 57);
     font-size: 15px;
     line-height: 28px;
 }

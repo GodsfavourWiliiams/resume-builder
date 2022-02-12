@@ -17,11 +17,11 @@ export class whyus extends Component {
                 </div>
                 <div className="col-md-12">
                     <div className='tabs'>
-                        <ul>
+                        {/* <ul>
                             <li><a href='#tabs-1'>Professional Resumes</a></li>
                             <li><a href='#tabs-2'>Safe Time</a></li>
                             <li><a href='#tabs-3'>Quality Resume</a></li>
-                        </ul>
+                        </ul> */}
                         <section className='tabs-content'>
                             <article className='tabs-1'>
                                 <div className="row">

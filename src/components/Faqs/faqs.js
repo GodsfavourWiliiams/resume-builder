@@ -55,7 +55,7 @@ function Accordion() {
                   <span className='fw-bold pb-3 pe-4 faq-body'>{selected === i ? '-' : '+'}</span>
                   </div>
                   <div className='px-3'>
-                    <p className={selected === i ? 'content show text-secondary' : 'content'}>
+                    <p className={selected === i ? 'content show' : 'content'}>
                     {item.answer}
                     </p>
                   </div>
@@ -63,7 +63,7 @@ function Accordion() {
               ))}
             </div>
           </div>
-          <button className='border-0 my-5 rounded-3 p-3 fw-bold'>Build My Resume Now</button>
+          <button className='border-0 my-5 rounded-3 p-3 fw-bold btn btn-primary'>Build My Resume Now</button>
       </div>
     )
   }
