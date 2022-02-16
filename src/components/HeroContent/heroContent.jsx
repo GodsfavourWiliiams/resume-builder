@@ -1,5 +1,6 @@
 import './HeroContent.css';
 import HeroImg from '../images/hero-img.png';
+import { Link } from 'react-router-dom';
 
 function Hero() {
 
@@ -14,10 +15,9 @@ function Hero() {
                             </p>
                          <div data-aos="fade-up" data-aos-delay="600">
                              <div className="text-center text-lg-start">
-                                 <a href="#about" className="btn btn-primary d-inline-flex align-items-center justify-content-center align-self-center text-decoration-none px-4 py-2">
-                                     <span>Get Started</span>
-                                     <i className="bi bi-arrow-right"></i>
-                                 </a>
+                                 <Link to="/SignIn" className="btn btn-primary d-inline-flex align-items-center justify-content-center align-self-center text-decoration-none px-4 py-2">
+                                     Get Started
+                                 </Link>
                              </div>
                          </div>
                      </div>

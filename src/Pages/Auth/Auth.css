@@ -1,4 +1,10 @@
-.user{
-    max-width: 350px;
-    width: 100%;
+
+.auth-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 100%;
+    min-height: 100vh;
 }

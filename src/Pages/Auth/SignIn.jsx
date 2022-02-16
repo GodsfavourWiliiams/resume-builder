@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default class SignIn extends Component {
   render() {
     return (
-    <div className="container">
+    <div className="auth-wrapper">
             <div className="">
                 <div className="p-5">
                     <div className="text-center">
@@ -28,9 +28,9 @@ export default class SignIn extends Component {
                                     Me</label>
                             </div>
                         </div>
-                        <a href="/" className="btn btn-primary w-100 my-3">
+                        <Link to="/template" className="btn btn-primary w-100 my-3">
                             Login
-                        </a>
+                        </Link>
                         <hr/>
                         <a href="/" className="btn btn-success my-3  w-100">
                             <FaGoogle/> Login with Google
@@ -39,12 +39,12 @@ export default class SignIn extends Component {
                             <FaFacebook/> Login with Facebook
                         </a>
                     </form>
-                    <hr className='user mx-auto'/>
+                    <hr className='mx-auto'/>
                     <div className="">
-                       <Link to='/' className="text-center">
+                       <Link to='/' className="d-block text-center">
                            Forgot Password
                          </Link>
-                         <Link to="/SignUp" className="text-center">
+                         <Link to="/SignUp" className="d-block text-center">
                             Create an Account!!
                         </Link> 
                     </div>

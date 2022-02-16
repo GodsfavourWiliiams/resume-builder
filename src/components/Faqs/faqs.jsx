@@ -17,16 +17,16 @@ const data =[
 },
 {
   question:'What if I need a cover letter for my resume?',
-  answerTwo: 'If you need a matching cover letter for your resume, then you’ve come to right place. Along with our resume generator, we also offer a state-of-the-art cover letter builder. The best part is that if you sign up for an RG account, you get unlimited access to both! In under ten minutes you can have a compatible resume and cover letter, and be ready to apply to the job of your dreams.'
+  answer: 'If you need a matching cover letter for your resume, then you’ve come to right place. Along with our resume generator, we also offer a state-of-the-art cover letter builder. The best part is that if you sign up for an RG account, you get unlimited access to both! In under ten minutes you can have a compatible resume and cover letter, and be ready to apply to the job of your dreams.'
 },
 {
   question:'Which resume builder template should I use?',
-  answerTwo: 'The resume template you choose is largely based on your personal preference and the impression you want to give to hiring managers. We design every template so that it’s flexible enough to suit any industry, level of experience and education, or skillset. So no matter which template you choose, you can be confident that it’s optimized to highlight your unique experiences and abilities.'
+  answer: 'The resume template you choose is largely based on your personal preference and the impression you want to give to hiring managers. We design every template so that it’s flexible enough to suit any industry, level of experience and education, or skillset. So no matter which template you choose, you can be confident that it’s optimized to highlight your unique experiences and abilities.'
 },
 
 {
   question:'Are there any examples of a good resume I can look at?',
-  answerTwo: 'Yes, we offer an extensive library of free resume examples. Our resume library covers all industries and 90+ job titles. Each sample has been meticulously written by our resume experts to demonstrate what an ideal resume in every industry should cover. If you aren’t sure what to include in your resume, or if you just need some inspiration to get started, we highly encourage you to visit our free resume example library.'
+  answer: 'Yes, we offer an extensive library of free resume examples. Our resume library covers all industries and 90+ job titles. Each sample has been meticulously written by our resume experts to demonstrate what an ideal resume in every industry should cover. If you aren’t sure what to include in your resume, or if you just need some inspiration to get started, we highly encourage you to visit our free resume example library.'
 }
 ]
 
@@ -51,13 +51,13 @@ function Accordion() {
             {/* <!-- F.A.Q List 1--> */}
             <div className="accordion accordion-flush wrapper mx-auto" >
               {data.map((item, i) => (
-                <div className="accordion-item">
-                    <h2 className="accordion-header" onClick={() => toggle(i)}>
-                        <div className="accordion-button collapsed" >
+                <div className="accordion-item" key={item.question}>
+                    <h2 className="" onClick={() => toggle(i)}>
+                        <div className="accordion-button collapsed fw-bold" >
                         {item.question}
                         </div>
                     </h2>
-                    <div className={selected === i ? 'content show' : 'content '}>
+                    <div className={selected === i ? 'content show' : 'content '} >
                         <div className="accordion-body">
                           {item.answer}
                         </div>

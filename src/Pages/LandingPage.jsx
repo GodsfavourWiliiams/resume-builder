@@ -7,6 +7,7 @@ import LearnMore from '../components/LearnMore/learnMore';
 import Footer from '../components/Footer/footer';
 import Faqs from '../components/Faqs/faqs';
 import ScrollToTop from './Scroll';
+// import Template from './Template';
 export default class LandingPage extends Component {
   render() {
     return (
@@ -18,7 +19,8 @@ export default class LandingPage extends Component {
             <Card/>
             <LearnMore/>
             <Faqs/>
-            <Footer/>
+            <Footer/> 
+            {/* <Template/> */}
           </Fragment>
     )
   }

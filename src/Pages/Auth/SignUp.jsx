@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { FaGoogle, FaFacebook} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 import './Auth.css';
 
 export default class SignUp extends Component {
   render() {
     return(
-         <div className="container">
+         <div className="auth-wrapper">
                 <div className="p-3">
                     <div className="text-center">
                         <h1 className="h4 text-gray-900 mb-4">Create an Account!</h1>
@@ -42,13 +44,13 @@ export default class SignUp extends Component {
                         <FaFacebook/> Register with Facebook
                     </a>
                 </form>
-            <hr className='user mx-auto'/>
-                    <div className="text-center">
-                        <a className="small" href="/">Forgot Password?</a>
-                    </div>
-                    <div className="text-center">
-                        <a className="small" href="login.html">Already have an account? Login!</a>
-                </div>
+            <hr className=''/>
+                    <Link to="/" className="d-block text-center">
+                      Forgot Password?
+                    </Link>
+                    <Link to="/SignIn" className="d-block text-center">
+                        Already have an account? Login!
+                    </Link>
         </div>
   </div>
     )
