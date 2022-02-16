@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Logo from '../../components/images/logo.png'
 import './Auth.css';
-import { FaGoogle, FaFacebook} from 'react-icons/fa';
+import { FaGoogle, FaGithub} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export default class SignIn extends Component {
@@ -10,6 +11,7 @@ export default class SignIn extends Component {
             <div className="">
                 <div className="p-5">
                     <div className="text-center">
+                        <img src={Logo} alt="" className='my-2' />
                         <h1 className="h4 text-gray-900 mb-4">Welcome Back!</h1>
                     </div>
                     <form className="user mx-auto">
@@ -36,7 +38,7 @@ export default class SignIn extends Component {
                             <FaGoogle/> Login with Google
                         </a>
                         <a href="/" className="btn btn-primary w-100">
-                            <FaFacebook/> Login with Facebook
+                            <FaGithub/> Login with GitHub
                         </a>
                     </form>
                     <hr className='mx-auto'/>
