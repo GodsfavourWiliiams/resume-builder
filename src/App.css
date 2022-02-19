@@ -104,12 +104,6 @@ section {
     height: 70px;
 }
 
-.header.header-scrolled {
-    background: #fff;
-    padding: 15px 0;
-    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-}
-
 .header .logo {
     line-height: 0;
 }
@@ -145,8 +139,7 @@ section {
     position: relative;
 }
 
-.navbars a,
-.navbars a:focus {
+.navbars a {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -302,9 +295,9 @@ section {
 }
 
 
-/*--------------------------------------------------------------
+/*
   # Features
-  --------------------------------------------------------------*/
+ */
 
 .features .feature-box {
     padding: 24px 20px;
@@ -380,13 +373,6 @@ section {
     color: #012970;
 }
 
-.features .feture-tabs .tab-content i {
-    font-size: 24px;
-    line-height: 0;
-    margin-right: 8px;
-    color: #4154f1;
-}
-
 .features .feature-icons {
     margin-top: 120px;
 }
@@ -414,13 +400,6 @@ section {
     font-weight: 700;
     margin: 0 0 10px 0;
     color: #012970;
-}
-
-.features .feature-icons .content .icon-box i {
-    font-size: 44px;
-    line-height: 44px;
-    color: #0245bc;
-    margin-right: 15px;
 }
 
 .features .feature-icons .content .icon-box p {
@@ -553,10 +532,6 @@ section {
     border-radius: 4px;
 }
 
-.footer .footer-newsletter form input[type=submit]:hover {
-    background: #5969f3;
-}
-
 .footer .footer-top {
     border-top: 1px solid #e1ecff;
     border-bottom: 1px solid #e1ecff;
@@ -650,4 +625,51 @@ section {
     text-align: center;
     padding-top: 30px;
     color: #012970;
+}
+
+.about .content {
+    background-color: #f6f9ff;
+    padding: 40px;
+}
+
+.about h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4154f1;
+    text-transform: uppercase;
+}
+
+.about h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #012970;
+}
+
+.about p {
+    margin: 15px 0 30px 0;
+    line-height: 24px;
+}
+
+.about .btn-read-more {
+    line-height: 0;
+    padding: 15px 40px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #4154f1;
+    box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
+}
+
+.about .btn-read-more span {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.errors {
+    position: fixed;
+    right: 0;
+    top: -100px;
+    z-index: 9999;
 }

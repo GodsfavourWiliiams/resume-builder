@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FaGoogle, FaFacebook} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
+import Logo from '../../components/images/CustomLogo.png';
 import './Auth.css';
 
 export default class SignUp extends Component {
@@ -10,6 +10,7 @@ export default class SignUp extends Component {
          <div className="auth-wrapper">
                 <div className="p-3">
                     <div className="text-center">
+                        <img src={Logo} alt="" />
                         <h1 className="h4 text-gray-900 mb-4">Create an Account!</h1>
                     </div>
                         <form className="user mx-auto">

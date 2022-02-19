@@ -16,7 +16,7 @@ function Hero() {
                          <div data-aos="fade-up" data-aos-delay="600">
                              <div className="text-center text-lg-start">
                                  <Link to="/SignIn" className="btn btn-primary d-inline-flex align-items-center justify-content-center align-self-center text-decoration-none px-4 py-2">
-                                     Get Started
+                                     Build My Resume Now
                                  </Link>
                              </div>
                          </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Logo from '../../components/images/logo.png'
+import Logo from '../../components/images/CustomLogo.png';
 import './Auth.css';
 import { FaGoogle, FaGithub} from 'react-icons/fa';
 import { Link } from 'react-router-dom';

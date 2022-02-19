@@ -32,7 +32,7 @@ const Navbar = () => {
           <ul className={`ul  ${isOpen && "show-menu"}`}>
               <li><a className="nav-link scrollto active" href="/">Home</a></li>
               <li><a className="nav-link scrollto" href="/">About</a></li>
-              <li><a className="nav-link scrollto" href="/">Contact</a></li>
+              <li><a className="nav-link scrollto" href="/">CV</a></li>
               <Link to="/SignIn" className="text-decoration-none">
                   <button className="btn btn-primary"> Get Started</button>         
                </Link>

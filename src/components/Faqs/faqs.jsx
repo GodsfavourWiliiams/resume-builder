@@ -40,14 +40,14 @@ function Accordion() {
       setselected(i)
     }
     return (
-<section id="faq" className="faq">
+      <section className="faq">
 
-<div className="container" data-aos="fade-up">
+        <div className="container" data-aos="fade-up">
 
-    <header className="section-header">
-        <h2>F.A.Q</h2>
-        <p>Frequently Asked Questions</p>
-    </header>
+          <header className="section-header">
+              <h2>F.A.Q</h2>
+              <p>Frequently Asked Questions</p>
+          </header>
             {/* <!-- F.A.Q List 1--> */}
             <div className="accordion accordion-flush wrapper mx-auto" >
               {data.map((item, i) => (
@@ -57,7 +57,7 @@ function Accordion() {
                         {item.question}
                         </div>
                     </h2>
-                    <div className={selected === i ? 'content show' : 'content '} >
+                    <div className={selected === i ? 'contents show' : 'contents '} >
                         <div className="accordion-body">
                           {item.answer}
                         </div>
@@ -67,7 +67,7 @@ function Accordion() {
             </div>
         </div>
 
-</section>
+    </section>
     )
   }
   export default Accordion ;
