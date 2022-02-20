@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import Navbar from '../../components/NavBar/navbar';
-import PageHeader from '../../pageElements/pageHeader/pageHeader';
-// import Form from '../../pageElements/Form';
 import MultiStepForm from '../../components/steps/multiStepForm';
+import PageHeader from '../../pageElements/pageHeader/pageHeader';
+import ProgressBar from '../../components/steps/progressBar';
 
 export default class WorkSpace extends Component {
     
@@ -15,15 +15,14 @@ export default class WorkSpace extends Component {
               <div className="pcoded-content ">
                     <PageHeader/>
                         <div className="card mt-5">
-                            <div className="card-header">
-                                <h5>Contacts Information</h5>
-                            </div>
-                           <MultiStepForm/>
+                            
+                                <MultiStepForm/>
                         </div>
-                    
-                    </div>
-            </section>
-      </div>
+                   
+            </div>
+        </section>
+        <ProgressBar/>
+    </div>
     )
   }
 }

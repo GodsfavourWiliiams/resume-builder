@@ -13,21 +13,38 @@ class Confirmation extends Component{
     };
  
     render(){
-        const {inputValues: { firstName, lastName, email, address, city, state, zip }} = this.props;
+        const {inputValues: {
+             firstName, lastName, proffession, email, phone, address, country, city, state, zip ,
+             jobDescription,
+             JobTitle,
+             JobCompanyName,
+             JobCountry,
+             Jobcity,
+            }} = this.props;
  
         return(
-            <div className='container'>
-                <h1>Confirm your Details</h1>
-                <p>Confirm if the following details are correct.</p>
+            <div className='container card-body'>
+                <h3 className='bg-primary p-3 rounded text-white mb-5'>Confirm if the following details are correct.</h3>
                 <p>First Name: {firstName}</p>
                 <p>Last Name: {lastName}</p>
+                <p>Proffession: {proffession}</p>
                 <p>Email: {email}</p>
+                <p>Phone: {phone}</p>
                 <p>Adress: {address}</p>
+                <p>Country: {country}</p>
                 <p>City: {city}</p>
                 <p>State: {state}</p>
                 <p>Zip: {zip}</p>
-                <button className="btn btn-secondary" onClick={this.back}>Back</button>{' '}
-                <button className="btn btn-primary">Confirm</button>
+                <p>Job Title: {JobTitle}</p>
+                <p>Job Company Name: {JobCompanyName}</p>
+                <p>Job Country: {JobCountry}</p>
+                <p>Job City: {Jobcity}</p>
+                <p>Job description: {jobDescription}</p>
+
+                <div className="d-flex align-items-center justify-content-between gap-3">
+                         <button className="btn border-secondary" onClick={this.back}>Back</button>{' '}
+                        <button className="btn btn-success">Confirm</button>
+                </div>
             </div>
         )
     }

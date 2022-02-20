@@ -15,10 +15,17 @@ class AddressDetails extends Component{
  
  
     render() {
-        return( <div className='Container'>
-                    <div className='form'>
+        return( 
+         <div className="">
+             <div className="card-header pt-3">
+                                <h5>Address Details</h5>
+                            </div>
+                    <div className='form card-body'>
+                        <p className="alert alert-primary">
+                            Tell us about your Location
+                        </p>
                         <div className='form-group' controlId="formAddress">
-                            <div>Address</div>
+                            <label className='form-label'>Address</label>
                             <input className='form-control'
                                 type="text"
                                 defaultValue={this.props.inputValues.address}
@@ -27,10 +34,20 @@ class AddressDetails extends Component{
                                 onChange={this.props.handleChange}
                             />
                         </div>
- 
-                        <div className='row'>
-                            <div className='form-group col' controlId="formCity">
-                                <div>City</div>
+                        <div className="row">
+                            <div className='form-group col-6' controlId="formCountry">
+                                <label className='form-label'>Country</label>
+                                <input className='form-control'
+                                type="text"
+                                defaultValue={this.props.inputValues.country}
+                                name="country"
+                                required
+                                onChange={this.props.handleChange}
+                                />
+                            </div>
+
+                            <div className='form-group col-6' controlId="formCity">
+                                <label className='form-label'>City</label>
                                 <input className='form-control'
                                 type="text"
                                 defaultValue={this.props.inputValues.city}
@@ -39,18 +56,18 @@ class AddressDetails extends Component{
                                 onChange={this.props.handleChange}
                                 />
                             </div>
- 
-                            <div className='form-control col' controlId="formState">
-                                <div>State</div>
-                                <select className='form-control' as="select" name="state" defaultValue={this.props.inputValues.state} onChange={this.props.handleChange}>
-                                    <option value="AL">Alabama</option>
-                                    <option value="AK">Alaska</option>
-                                    <option value="AZ">Arizona</option>
-                                </select>
+                        </div>
+                        <div className="row">
+                            <div className='form-group col-6' controlId="formState">
+                                <label className='form-label'>State</label>
+                                <input className='form-control'
+                                 name="state" 
+                                 defaultValue={this.props.inputValues.state} 
+                                 onChange={this.props.handleChange}/>
                             </div>
  
-                            <div className='form-control col' controlId="formZip">
-                                <div>Zip</div>
+                            <div className='form-group col-6' controlId="formZip">
+                                <label className='form-label'>Zip</label>
                                 <input className='form-control'
                                 type="text"
                                 defaultValue={this.props.inputValues.zip}
@@ -60,11 +77,12 @@ class AddressDetails extends Component{
                                 />
                             </div>
                         </div>
- 
-                        <button className='btn btn-secondary'  onClick={this.back}>Back</button>{' '}
-                        <button className='btn btn-primary' onClick={this.saveAndContinue}>Next</button>
+                        <div className="d-flex align-items-center justify-content-between gap-3">
+                            <button className='btn btn-transparent border-secondary'  onClick={this.back}>Back</button>{' '}
+                             <button className='btn btn-success' onClick={this.saveAndContinue}>Continue</button>
+                       </div>
                     </div>
-                </div>
+    </div>
         );
     }
 }

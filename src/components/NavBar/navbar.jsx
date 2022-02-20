@@ -7,6 +7,7 @@ import Logo from '../images/logo.png';
 const Navbar = () => {
   const [isNavScroll, setIsNavScroll] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const User = useState(false)
 
   const changeNavbarColor = () =>{
       if (window.scrollY >= 60){
@@ -18,6 +19,12 @@ const Navbar = () => {
   }
   
   window.addEventListener("scroll", changeNavbarColor);
+  if (User){
+
+  }
+  else{
+
+  }
   return (
 
   <header className={isNavScroll ? ' bg-white shadow-sm fixed-top py-1 header d-flex align-items-center' : 'header d-flex align-items-center py-3 fixed-top'}>

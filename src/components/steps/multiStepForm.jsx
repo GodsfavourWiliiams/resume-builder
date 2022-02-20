@@ -2,17 +2,28 @@ import React, { Component } from 'react';
 import UserDetails from "./userDetails";
 import AddressDetails from "./addressDetails";
 import Confirmation from "./Confirmation";
+import Experience from './experience';
+import Description from './Description';
+import Education from './education';
  
 class multiStepForm extends Component {
     state = {
         step: 1,
         firstName: '',
         lastName: '',
+        proffesion: '',
         email: '',
+        phone: '',
         address: '',
+        country: '',
         city: '',
         state: '',
-        zip:'',
+        zip: '',
+        JobCompanyName: '',
+        JobCountry: '',
+        JobTitle: '',
+        Jobcity: '',
+        jobDescription: '',
     }
  
     nextStep = () => {
@@ -34,8 +45,21 @@ class multiStepForm extends Component {
     }
  
     render(){
-        const { step, firstName, lastName, email, address, city, state, zip } = this.state;
-        const inputValues = { firstName, lastName, email, address, city, state, zip };
+        const { step, firstName, lastName, proffession, email, phone, address, country, city, state, zip,
+             jobDescription ,
+             JobCompanyName,
+             JobCountry,
+             JobTitle,
+             Jobcity,
+
+        } = this.state;
+        const inputValues = { firstName, lastName, proffession, email, phone, address, country, city, state, zip,
+             jobDescription ,
+             JobCompanyName,
+             JobCountry,
+             JobTitle,
+             Jobcity,
+        };
         switch(step) {
         case 1:
             return <UserDetails
@@ -51,6 +75,27 @@ class multiStepForm extends Component {
                     inputValues={inputValues}
                     />
         case 3:
+            return <Experience
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange = {this.handleChange}
+            inputValues={inputValues}
+                    />
+        case 4:
+          return <Description
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange = {this.handleChange}
+          inputValues={inputValues}
+                  />
+        case 5:
+          return <Education
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          inputValues={inputValues}
+          />
+        case 6:
             return <Confirmation
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
