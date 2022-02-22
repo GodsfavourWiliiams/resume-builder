@@ -20,11 +20,16 @@ class Confirmation extends Component{
              JobCompanyName,
              JobCountry,
              Jobcity,
+             FieldOfStudy,
+             Degree,
+             SchoolLocation,
+             SchoolName
             }} = this.props;
  
         return(
             <div className='container card-body'>
-                <h3 className='bg-primary p-3 rounded text-white mb-5'>Confirm if the following details are correct.</h3>
+                <div className="row">
+                    <div className="col-3">
                 <p>First Name: {firstName}</p>
                 <p>Last Name: {lastName}</p>
                 <p>Proffession: {proffession}</p>
@@ -35,15 +40,24 @@ class Confirmation extends Component{
                 <p>City: {city}</p>
                 <p>State: {state}</p>
                 <p>Zip: {zip}</p>
+                </div>
+                <div className='col-3'>
                 <p>Job Title: {JobTitle}</p>
                 <p>Job Company Name: {JobCompanyName}</p>
                 <p>Job Country: {JobCountry}</p>
                 <p>Job City: {Jobcity}</p>
                 <p>Job description: {jobDescription}</p>
-
+                </div>
+                <div className="col-3">
+                    <p>Feild of study: {FieldOfStudy}</p>
+                    <p>Degree:  {Degree}</p>
+                    <p>School Location {SchoolLocation}</p>
+                    <p>School Name: {SchoolName}</p>
+                </div>
+              </div>  
                 <div className="d-flex align-items-center justify-content-between gap-3">
                          <button className="btn border-secondary" onClick={this.back}>Back</button>{' '}
-                        <button className="btn btn-success">Confirm</button>
+                        <button className="btn btn-primary">Confirm</button>
                 </div>
             </div>
         )

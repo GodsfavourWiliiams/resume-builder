@@ -16,7 +16,7 @@ class userDetails extends Component{
  
     render() {
         return( <div className=''>
-                            <div className="card-header pt-3">
+                            <div className="card-header bg-white pt-3">
                                 <h5>What's the best way for employers to contact you?</h5>
                             </div>
                     <div className='form card-body'>
@@ -28,6 +28,7 @@ class userDetails extends Component{
                                 type="text"
                                 defaultValue={this.props.inputValues.firstName}
                                 name="firstName"
+                                placeholder='First Name'
                                 required
                                 onChange={this.props.handleChange}
                                 />
@@ -39,6 +40,7 @@ class userDetails extends Component{
                                 type="text"
                                 defaultValue={this.props.inputValues.lastName}
                                 name="lastName"
+                                placeholder='Last Name'
                                 required
                                 onChange={this.props.handleChange}
                                 />
@@ -50,6 +52,7 @@ class userDetails extends Component{
                                 type="text"
                                 defaultValue={this.props.inputValues.proffession}
                                 name="proffession"
+                                placeholder='Proffession'
                                 required
                                 onChange={this.props.handleChange}
                                 />
@@ -61,6 +64,7 @@ class userDetails extends Component{
                             type="email"
                             defaultValue={this.props.inputValues.email}
                             name="email"
+                            placeholder='Email'
                             required
                             onChange={this.props.handleChange}
                             />
@@ -72,14 +76,16 @@ class userDetails extends Component{
                             type="number"
                             defaultValue={this.props.inputValues.phone}
                             name="phone"
+                            placeholder='Phone Number'
                             required
                             onChange={this.props.handleChange}
                             />
                         </div >
                     </div> 
-                    <div className="d-flex justify-content-end">
-                        <button className="btn btn-success " onClick={this.saveAndContinue}>Continue</button>
-                        </div>   
+                    <div className="d-flex align-items-center justify-content-between my-3 gap-3">
+                     <button className='btn btn-transparent border-secondary'  onClick={this.back}>Back</button>{' '}
+                    <button className='btn btn-primary' onClick={this.saveAndContinue}>Continue</button>
+            </div>
                     </div>
                 </div>
         );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LandingPage from './Pages/LandingPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+
 import SignUp from './Pages/Auth/SignUp';
 import SignIn from './Pages/Auth/SignIn';
 import 'bootstrap/dist/css/bootstrap.min.css';

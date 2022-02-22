@@ -14,11 +14,9 @@ export default class WorkSpace extends Component {
             <section className="pc-container container">
               <div className="pcoded-content ">
                     <PageHeader/>
-                        <div className="card mt-5">
-                            
-                                <MultiStepForm/>
-                        </div>
-                   
+                     <div className="card mt-5">
+                         <MultiStepForm/>
+                    </div>
             </div>
         </section>
         <ProgressBar/>

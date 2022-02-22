@@ -7,11 +7,19 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import Footer from '../../components/Footer/footer';
 
+
+
+
 export default class Template extends Component {
+ 
   render() {
+
     return (
  <div className="">
    <Navbar/>
+   <div>
+   
+      </div>
     <section className="about">
 
       <div className="container" >
@@ -49,8 +57,10 @@ export default class Template extends Component {
 
           </div>
       </div>
-
+     
+      
   </section>
+  
   <Footer/>
   </div>
     )

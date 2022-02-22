@@ -17,7 +17,7 @@ class AddressDetails extends Component{
     render() {
         return( 
          <div className="">
-             <div className="card-header pt-3">
+             <div className="card-header bg-white pt-3">
                                 <h5>Address Details</h5>
                             </div>
                     <div className='form card-body'>
@@ -30,6 +30,7 @@ class AddressDetails extends Component{
                                 type="text"
                                 defaultValue={this.props.inputValues.address}
                                 name="address"
+                                placeholder='Address'
                                 required
                                 onChange={this.props.handleChange}
                             />
@@ -41,6 +42,7 @@ class AddressDetails extends Component{
                                 type="text"
                                 defaultValue={this.props.inputValues.country}
                                 name="country"
+                                placeholder='Current Location'
                                 required
                                 onChange={this.props.handleChange}
                                 />
@@ -52,6 +54,7 @@ class AddressDetails extends Component{
                                 type="text"
                                 defaultValue={this.props.inputValues.city}
                                 name="city"
+                                placeholder='City'
                                 required
                                 onChange={this.props.handleChange}
                                 />
@@ -62,6 +65,7 @@ class AddressDetails extends Component{
                                 <label className='form-label'>State</label>
                                 <input className='form-control'
                                  name="state" 
+                                 placeholder='State'
                                  defaultValue={this.props.inputValues.state} 
                                  onChange={this.props.handleChange}/>
                             </div>
@@ -72,6 +76,7 @@ class AddressDetails extends Component{
                                 type="text"
                                 defaultValue={this.props.inputValues.zip}
                                 name="zip"
+                                placeholder='Zip'
                                 required
                                 onChange={this.props.handleChange}
                                 />
@@ -79,7 +84,7 @@ class AddressDetails extends Component{
                         </div>
                         <div className="d-flex align-items-center justify-content-between gap-3">
                             <button className='btn btn-transparent border-secondary'  onClick={this.back}>Back</button>{' '}
-                             <button className='btn btn-success' onClick={this.saveAndContinue}>Continue</button>
+                             <button className='btn btn-primary' onClick={this.saveAndContinue}>Continue</button>
                        </div>
                     </div>
     </div>
