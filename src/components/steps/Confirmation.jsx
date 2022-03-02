@@ -23,7 +23,11 @@ class Confirmation extends Component{
              FieldOfStudy,
              Degree,
              SchoolLocation,
-             SchoolName
+             SchoolName,
+             JobStartDate,
+             JobEndDate,
+             EducationStartDate,
+             EducationEndDate
             }} = this.props;
  
         return(
@@ -47,12 +51,16 @@ class Confirmation extends Component{
                 <p>Job Country: {JobCountry}</p>
                 <p>Job City: {Jobcity}</p>
                 <p>Job description: {jobDescription}</p>
+                <p>Job Start Date: {JobStartDate}</p>
+                <p>Job End Date: {JobEndDate}</p>
                 </div>
                 <div className="col-3">
                     <p>Feild of study: {FieldOfStudy}</p>
                     <p>Degree:  {Degree}</p>
                     <p>School Location {SchoolLocation}</p>
                     <p>School Name: {SchoolName}</p>
+                    <p>School Start Date: {EducationStartDate}</p>
+                    <p>School End Date: {EducationEndDate}</p>
                 </div>
               </div>  
                 <div className="d-flex align-items-center justify-content-between gap-3">

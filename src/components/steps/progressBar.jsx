@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import Filler from './filler';
 
-export default class progressBar extends Component {
-  render() {
-    return (
-      <div className='shadow text-center p-3 progressBar w-100 bg-light'>
-          Progress Bar
+const ProgressBar = (props) => {
+  return (
+  <div className="progress-bars p-3 w-full bg-light shadow">
+      <div className="progresss ">
+        <Filler percentage={props.percentage} />
       </div>
+  </div>
     )
-  }
 }
+export default ProgressBar;

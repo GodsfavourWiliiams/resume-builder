@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// import Input from '../reUseableComponents/Input'
+
  
  
 class userDetails extends Component{
@@ -15,10 +17,12 @@ class userDetails extends Component{
  
  
     render() {
-        return( <div className=''>
-                            <div className="card-header bg-white pt-3">
-                                <h5>What's the best way for employers to contact you?</h5>
-                            </div>
+        return( 
+        <div className=''>
+        
+                    <div className="card-header bg-white pt-3">
+                        <h5>What's the best way for employers to contact you?</h5>
+                    </div>
                     <div className='form card-body'>
                         <p className="alert alert-primary">We suggest including an email and phone number.</p>
                         <div className='row'>
@@ -52,7 +56,7 @@ class userDetails extends Component{
                                 type="text"
                                 defaultValue={this.props.inputValues.proffession}
                                 name="proffession"
-                                placeholder='Proffession'
+                                placeholder='Full-Stack-Engineer'
                                 required
                                 onChange={this.props.handleChange}
                                 />

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import Navbar from '../../components/NavBar/navbar';
-import TemplateImg from '../../components/images/features-3.png';
+import TemplateImg from '../../components/images/Ikbal2.png';
 import './Template.css';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
@@ -13,7 +12,6 @@ import Footer from '../../components/Footer/footer';
 export default class Template extends Component {
  
   render() {
-
     return (
  <div className="">
    <Navbar/>
@@ -42,9 +40,9 @@ export default class Template extends Component {
                       <p>
                          Presto! Your resume is ready to share!
                       </p>
-                      <div className="text-center text-lg-start">
-                          <Link to="/Workspace" className=" btn btn-primary text-decoration-none align-items-center align-self-center">
-                              <span className='mr-2'>Continue</span>
+                      <div className="">
+                          <Link to="/Workspace" className=" btn btn-primary text-decoration-none align-items-center">
+                              <span className='p-2'>Continue</span>
                               <FaArrowRight/>
                           </Link>
                       </div>

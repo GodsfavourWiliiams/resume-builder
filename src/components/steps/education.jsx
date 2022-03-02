@@ -7,7 +7,7 @@ class Education extends Component{
         super(props);
         this.state = { disabled: false }
     }
-    handleGameClik() {
+    handleCheckClick() {
         this.setState( {disabled: !this.state.disabled} )
 }
 
@@ -82,23 +82,23 @@ class Education extends Component{
                     onChange={this.props.handleChange}
                     />
                 </div>
-                <div className='form-group col-lg-3' controlId="formZip">
-                    <label className='form-label'>Graduation Start Date</label>
+                <div className='form-group col-lg-3' controlId="formEducationStartDate">
+                    <label className='form-label'>Start Date</label>
                     <input className='form-control'
                     type="date"
-                    defaultValue={this.props.inputValues.zip}
-                    name="Date"
+                    defaultValue={this.props.inputValues.EducationStartDate}
+                    name="EducationStartDate"
                     required
                     onChange={this.props.handleChange}
                     />
                 </div>
             
-                <div className='form-group col-lg-3' controlId="formZip">
-                    <label className='form-label'>Graduation End Date</label>
+                <div className='form-group col-lg-3' controlId="formEducationEndDate">
+                    <label className='form-label'>End Date</label>
                     <input className='form-control'
                     type="date"
-                    defaultValue={this.props.inputValues.zip}
-                    name="Date"
+                    defaultValue={this.props.inputValues.EducationEndDate}
+                    name="EducationEndDate"
                     required
                     onChange={this.props.handleChange}
                     disabled= {(this.state.disabled)? "disabled" : ""}
@@ -107,7 +107,7 @@ class Education extends Component{
             </div>
             
             <div className="form-check gap-2">
-                <input type="checkbox" name="Check" className='form-check-input' onClick = {this.handleGameClik.bind(this)} />
+                <input type="checkbox" name="Check" className='form-check-input' onClick = {this.handleCheckClick.bind(this)} />
                 <label htmlFor="Work" className='form-check-label'>I currently Attend Here</label>
             </div>
             <div className="d-flex align-items-center justify-content-between my-3 gap-3">

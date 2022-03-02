@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import IntroIllustration from '../images/Ikbal2.png';
 import IntroCreate from '../images/Saly-26.svg';
 import IntroFolder from '../images/ImportFolder.svg';
  
@@ -23,13 +22,13 @@ class userDetails extends Component{
                     <p className="text-center">
                         Let's start by sellecting the type of text you want to order
                     </p>
-                <div className="d-flex justify-content-center my-5  gap-4">
-                    <div className="">
+                <div className="d-flex justify-content-center my-5 gap4">
+                    <div className="me-2">
                             <div className="boxed responsive p-3">
                                 <img src={IntroCreate} alt="" className='responsive'/>
                             </div>
                     </div>
-                    <div className="">
+                    <div className="ms-2">
                         <div className="boxed responsive">
                             <img src={IntroFolder} alt=""  className='responsive'/>
                             
@@ -37,8 +36,6 @@ class userDetails extends Component{
                            
                     </div>
                 </div>
-                            
-                           
 
                     <div className="d-flex justify-content-end">
                         <button className="btn btn-primary " onClick={this.saveAndContinue}>Continue</button>

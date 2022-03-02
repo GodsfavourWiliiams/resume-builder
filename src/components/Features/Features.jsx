@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Features.css';
-import FeatureImg from '../images/features.png';
+import FeatureImg from '../images/Other 01.png';
 import { FaCheck } from 'react-icons/fa';
 
 
@@ -19,10 +19,10 @@ export class Features extends Component {
             <div className="row">
 
                 <div className="col-lg-6">
-                    <img src={FeatureImg} className="img-fluid" alt=""/>
+                    <img src={FeatureImg} className="img-fluid " alt=""/>
                 </div>
 
-                <div className="col-lg-6 mt-5 mt-lg-0 d-flex">
+                <div className="col-lg-6 mt-lg-0 d-flex">
                     <div className="row align-self-center gx-3 gy-3">
 
                         <div className="col-md-6 shadow-sm rounded" data-aos="zoom-out" data-aos-delay="200">

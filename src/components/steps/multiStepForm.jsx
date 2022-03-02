@@ -8,6 +8,7 @@ import Education from './education';
 import Intro from './intro';
  
 class multiStepForm extends Component {
+ 
     state = {
         step: 1,
         firstName: '',
@@ -28,16 +29,22 @@ class multiStepForm extends Component {
         FieldOfStudy: '',
         Degree: '',
         SchoolLocation: '',
-        SchoolName: ''
+        SchoolName: '',
+        JobStartDate: '',
+        JobEndDate: '',
+        EducationStartDate:'',
+        EducationEndDate: ''
     }
  
     nextStep = () => {
         const { step } = this.state
         this.setState({
-            step : step + 1
+            step : step + 1,
         })
     }
- 
+
+    percentage: 9
+
     prevStep = () => {
         const { step } = this.state
         this.setState({
@@ -59,7 +66,11 @@ class multiStepForm extends Component {
              FieldOfStudy,
              Degree,
              SchoolLocation,
-             SchoolName
+             SchoolName,
+             JobStartDate,
+             JobEndDate,
+             EducationStartDate,
+             EducationEndDate
 
         } = this.state;
         const inputValues = { firstName, lastName, proffession, email, phone, address, country, city, state, zip,
@@ -71,7 +82,11 @@ class multiStepForm extends Component {
              FieldOfStudy,
              Degree,
              SchoolLocation,
-             SchoolName
+             SchoolName,
+             JobStartDate,
+             JobEndDate,
+             EducationStartDate,
+             EducationEndDate
         };
         switch(step) {
         case 1:
@@ -96,25 +111,25 @@ class multiStepForm extends Component {
                     />
         case 4:
             return <Experience
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange = {this.handleChange}
-            inputValues={inputValues}
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    handleChange = {this.handleChange}
+                    inputValues={inputValues}
                     />
         case 5:
           return <Description
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          handleChange = {this.handleChange}
-          inputValues={inputValues}
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    handleChange = {this.handleChange}
+                    inputValues={inputValues}
                   />
         case 6:
           return <Education
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          handleChange={this.handleChange}
-          inputValues={inputValues}
-          />
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    handleChange={this.handleChange}
+                    inputValues={inputValues}
+                    />
         case 7:
             return <Confirmation
                     nextStep={this.nextStep}
