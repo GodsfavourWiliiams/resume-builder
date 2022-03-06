@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Logo from '../../components/images/CustomLogo.png';
 import './Auth.css';
 import { FaGoogle, FaGithub} from 'react-icons/fa';
-import auth  from '../Auth/Auth';
 import { Link } from 'react-router-dom';
 
 export default class SignIn extends Component {
@@ -16,22 +15,23 @@ export default class SignIn extends Component {
                         <h1 className="h4 text-gray-900 mb-4">Welcome Back!</h1>
                     </div>
                     <form className="user mx-auto">
-                        <div className="form-group">
-                            <input type="email" className="form-control form-control-user"
-                                placeholder="Enter Email Address..."/>
-                        </div>
-                        <div className="form-group my-3">
-                            <input type="password" className="form-control form-control-user"
-                            placeholder="Password"/>
-                        </div>
+                     
+                   <div className="form">
+                        <input type="text" className="form__input" placeholder=" "/>
+                        <label for="email" className="form__label">Email</label>
+                    </div>
+                    <div className="form">
+                        <input type="password" className="form__input" placeholder=" "/>
+                        <label for="password" className="form__label">Password</label>
+                    </div>
                         <div className="form-group">
                             <div className="d-flex align-items-center gap-1">
-                                <input type="checkbox" className="form-check-input" />
+                                <input type="checkbox" className="form-check-input p-1" />
                                 <label className="form-check-label " htmlFor="customCheck">
                                     Remember Me</label>
                             </div>
                         </div>
-                        <Link to="/template" className="btn btn-primary w-100 my-3" onClick={() => {
+                        <Link to="/template" className="btn btn-primary w-100 mb-3" onClick={() => {
                             alert("User is Login")
                         }}>
                             Login

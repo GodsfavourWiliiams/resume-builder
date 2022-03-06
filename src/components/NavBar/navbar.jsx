@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { FiSettings, FiLogOut } from "react-icons/fi";
 import "./NavBar.css";
 import Logo from '../images/logo.png';
 import Avatar from '../images/avatar-2.jpg';
-import Modal from '../reUseableComponents/Modal'
 import Setting from "../reUseableComponents/Setting";
 
 const Navbar = () => {
   const [isNavScroll, setIsNavScroll] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [status, setStatus] = useState(false);
+  const [isSideOpen, setIsSideopen] = useState(false);
+
+  const ToggleSidebar = () => {
+    isSideOpen === true ? setIsSideopen(false) : setIsSideopen(true);
+  }
 
   const changeNavbarColor = () =>{
       if (window.scrollY >= 60){
@@ -57,7 +60,7 @@ const Navbar = () => {
           <img className="img-profile rounded-circle" alt="profile" src={Avatar}/>
       </div>
       <ul className={`profile ${isProfileOpen && "show-profile shadow-sm bg-white rounded animated--grow-in"}`}>
-          <li className="dropdown-item py-2"  onClick={() => setStatus(true)}>
+          <li className="dropdown-item py-2" onClick={ToggleSidebar}>
               <FiSettings className="mr-2 text-gray-400"/> Settings
           </li>
           <Link to="/SignIn" className="dropdown-item py-2">
@@ -67,11 +70,18 @@ const Navbar = () => {
   </div>
 
       }
-      { status && (<Modal closeModal={() => setStatus(false)}> 
-            <p>
-          <Setting/>
-          </p></Modal>)}
-  </div>
+     
+                    <div className={`sidebar ${isSideOpen === true ? 'active' : ''}`}>
+                        <div className="sd-header">
+                            <h4 className="mb-0">Settings</h4>
+                            <div className="btn btn-primary p-0" onClick={ToggleSidebar}><FaTimes className="m-2"/></div>
+                        </div>
+                        <div className="sd-body">
+                          <Setting/>
+                        </div>
+                    </div>
+                <div className={`sidebar-overlay ${isSideOpen === true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
+            </div>
 </header>
   );
 };

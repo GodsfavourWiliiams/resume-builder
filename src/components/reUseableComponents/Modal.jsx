@@ -18,7 +18,7 @@ const Modal = (props) => {
   );
 
   return (
-    <div className="overlay" >
+    <div className="overlay">
         <div className="container contentOne">
             <div className="content ">
                 { closeicon() }

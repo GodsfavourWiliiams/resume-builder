@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FiSettings, FiDelete, FiUsers, FiSpeaker } from "react-icons/fi";
+import { FiSettings, FiDelete, FiUsers, FiSpeaker, FiEdit2 } from "react-icons/fi";
 
 export default class Setting extends Component {
   constructor(props) {
@@ -18,77 +18,49 @@ handleToggleVisibility() {
 }
   render() {
     return (
-      <div>
-       <div className="row gutters-sm">
-        <div className="col-md-4 d-none d-md-block">
-          <div className="card">
-            <div className="card-body">
+       <div className="">
               <nav className="nav flex-column nav-pills ">
-                <div className={this.state.visibility ? 'nav-item nav-link has-icon nav-link-faded' : 
-                ' nav-item nav-link has-icon nav-link-faded active'} onClick={this.handleToggleVisibility}>
-                <FiUsers className='mb-1'/>
+                <div className={this.state.visibility ? 'nav-item mb-2 nav-link nav-link-faded bg-light' : 
+                ' nav-item nav-link nav-link-faded active mb-2'} onClick={this.handleToggleVisibility}>
+                <FiUsers className='mb-1 mx-2'/>
                   Email 
                 </div>
-                <div className="nav-item nav-link has-icon nav-link-faded">
-                    <FiSettings className='mb-1'/>
+                <div className="nav-item nav-link nav-link-faded bg-light mb-2">
+                    <FiSettings className='mb-1 mx-2'/>
                   Password
                 </div>
-                <div className="nav-item nav-link has-icon nav-link-faded">
-                    <FiSpeaker className='mb-1'/>
+                <div className="nav-item nav-link nav-link-faded bg-light mb-2">
+                    <FiSpeaker className='mb-1 mx-2'/>
                   Language
                 </div>
-                <div className="nav-item nav-link has-icon nav-link-faded">
-                    <FiDelete className='mb-1'/>
+                <div className="nav-item nav-link nav-link-faded bg-light mb-2">
+                    <FiDelete className='mb-1 mx-2'/>
                  Delete
                 </div>
-               
+                <div className="nav-item nav-link nav-link-faded bg-light">
+                    <FiEdit2 className='mb-1 mx-2'/>
+                 Templates
+                </div>
               </nav>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-8">
-          <div className="card">
-            <div className="card-header border-bottom mb-3 d-flex d-md-none">
-              <ul className="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
-                <li className="nav-item">
-                  <div  className="nav-link has-icon">
-                  <FiUsers className=''/>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <div  className="nav-link has-icon">
-                      <FiSettings/>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <div  className="nav-link has-icon">
-                      <FiSpeaker/>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <div  className="nav-link has-icon">
-                      <FiDelete/>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="card-body tab-content">
+      
+            <div className="py-4 tab-content">
            
               <div className={this.state.visibility ? 'tab-pane' : 
                 ' active'}>
                 <form>
                   <div className="form-group">
                     <label htmlfor="fullName">Email</label>
-                    <input type="text" className="form-control" aria-describedby="fullNameHelp" placeholder="Enter your Email"/>
+                    <input type="text" className="form-control" placeholder="Enter your Email"/>
                   </div>
+                  
                 <div className="row form-group">
                   <div className="col-lg-6">
                     <label for="url">New</label>
-                    <input type="text" className="form-control mt-2" id="url" placeholder="Change Email"/>
+                    <input type="text" className="form-control mt-2" placeholder="Change Email"/>
                   </div>
                   <div className="col-lg-6">
                     <label for="location">Confirm</label>
-                    <input type="text" className="form-control mt-2" id="location" placeholder="Confirm New Email" />
+                    <input type="text" className="form-control mt-2" placeholder="Confirm New Email" />
                   </div>
                 </div>
                   <div className="d-flex align-items-center justify-content-between mt-3">
@@ -102,7 +74,7 @@ handleToggleVisibility() {
                 <form>
                   <div className="form-group">
                     <label for="username">Username</label>
-                    <input type="text" className="form-control mt-2" id="username" aria-describedby="usernameHelp" placeholder="Enter your username"/>
+                    <input type="text" className="form-control mt-2" placeholder="Enter your username"/>
                  </div>
                   <div className="form-group">
                     <label className="d-block text-danger">Delete Account</label>
@@ -111,7 +83,7 @@ handleToggleVisibility() {
                   <button className="btn btn-danger" type="button">Delete Account</button>
                 </form>
               </div>
-              <div className="tab-pane" id="security">
+              <div className="tab-pane">
                 <form>
                   <div className="form-group">
                     <label className="mb-2">Current Password</label>
@@ -133,7 +105,7 @@ handleToggleVisibility() {
                   </div>
               </div>
               {/*  */}
-               <div className="tab-pane" id="security">
+               <div className="tab-pane">
                 <form>
                   <div className="form-group">
                     <label className="mb-2">Change Language</label>
@@ -148,9 +120,6 @@ handleToggleVisibility() {
               {/*  */}
             </div>
           </div>
-        </div>
-      </div>
-    </div>
     )
   }
 }

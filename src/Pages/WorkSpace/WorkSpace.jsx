@@ -1,33 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Navbar from '../../components/NavBar/navbar';
-import MultiStepForm from '../../components/steps/multiStepForm';
-// import PageHeader from '../../pageElements/pageHeader/pageHeader';
-import ProgressBar from '../../components/steps/progressBar';
+import Body from '../../ResumeComponents/Body/Body'
 
-export default class WorkSpace extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-        percentage: ''
-    }
-}
-
-  render() {
+export default function WorkSpace() {
+  
     return (
       <div>
           <Navbar/>
             <section className="pc-container container">
               <div className="pcoded-content ">
-                    {/* <PageHeader/> */}
-                     <div className="card mt-5">
-                         <MultiStepForm/>
+                     <div className="mt-5">
+                       <Body/>
                     </div>
-            </div>
-        </section>
-        
-        <ProgressBar className="progress-bars" percentage={this.state.percentage}/>
-    </div>
+              </div>
+            </section>
+      
+       </div>
     )
-  }
 }

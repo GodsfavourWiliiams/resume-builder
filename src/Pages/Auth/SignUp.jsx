@@ -14,26 +14,28 @@ export default class SignUp extends Component {
                         <h1 className="h4 text-gray-900 mb-4">Create an Account!</h1>
                     </div>
                         <form className="user mx-auto">
-                                    <div className=" mb-3 ">
-                                        <input type="text" className="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name"/>
+                               <div className="form nb-3">
+                                      <input type="text" className="form__input" placeholder=" "/>
+                                    <label htmlFor="email" className="form__label">First Name</label>
+                                 </div>
+                               <div className="form">
+                                        <input type="text" className="form__input" placeholder=" "/>
+                                         <label htmlFor="text" className="form__label">Last Name</label>
+                                 </div>
+                                  
+                                    <div className="form">
+                                        <input type="text" className="form__input" placeholder=" "/>
+                                        <label htmlFor="email" className="form__label">Email</label>
                                     </div>
-                                    <div className="">
-                                        <input type="text" className="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name"/>
+                                    <div className="form">
+                                        <input type="password" className="form__input" placeholder=" "/>
+                                        <label htmlFor="password" className="form__label">Password</label>
                                     </div>
-                                    <div className=" my-3">
-                                        <input type="email" className="form-control form-control-user" id="exampleInputEmail"
-                                            placeholder="Email Address"/>
+                                    <div className="form">
+                                        <input type="password" className="form__input" placeholder=" "/>
+                                        <label htmlFor="password" className="form__label">Repeat Password</label>
                                     </div>
-                                    <div className=" mb-3 ">
-                                        <input type="password" className="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password"/>
-                                    </div>
-                                    <div className="">
-                                        <input type="password" className="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password"/>
-                                    </div>
+                                    
                                 <a href="/" className="btn btn-primary my-3 w-100">
                                     Register Account
                                 </a>
