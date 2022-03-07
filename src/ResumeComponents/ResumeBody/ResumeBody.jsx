@@ -311,7 +311,7 @@ const Resume = forwardRef((props, ref) => {
   }, [props.activeColor]);
 
   return (
-    <div ref={ref} className="col-lg-6">
+    <div ref={ref} className="">
       <div ref={containerRef} className={styles.container}>
         <div className={styles.header}>
           <p className={styles.name}>{info.basicInfo?.detail?.name}</p>

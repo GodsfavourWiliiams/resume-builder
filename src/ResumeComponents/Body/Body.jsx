@@ -6,7 +6,13 @@ import Modal from '../../components/reUseableComponents/Modal';
 import styles from "./Body.module.css";
 
 function Body() {
-  const colors = ["#239ce2", "#48bb78", "#0bc5ea", "#a0aec0", "#ed8936"];
+  const colors = [
+    "#f44336","#E91E63","#9C27B0","#673AB7",
+   "#3F51B5","#2196F3","#03A9F4","#00BCD4",
+   "#009688","#4CAF50","#8BC34A","#CDDC39",
+   "#FFEB3B","#FFC107","#FF9800","#FF5722",
+   "#795548","#9E9E9E","#607D8B","#7f8188",
+   "#212121","#263238","#000","#091731",];
   const sections = {
     basicInfo: "Basic Info",
     workExp: "Work Experience",
@@ -60,33 +66,35 @@ function Body() {
 
   return (
     <div className="">
-      <div className="">
-        <div className={styles.colors}>
-          {colors.map((item) => (
-            <span
-              key={item}
-              style={{ backgroundColor: item }}
-              className={`${styles.color} ${
-                activeColor === item ? styles.active : ""
-              }`}
-              onClick={() => setActiveColor(item)}
-            />
-          ))}
-        </div>
+     <div className="row">
+      <div className="col-lg-6">
+            <div className={styles.colors}>
+              {colors.map((item) => (
+                <span
+                  key={item}
+                  style={{ backgroundColor: item }}
+                  className={`${styles.color} ${
+                    activeColor === item ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveColor(item)}
+                />
+              ))}
+            </div>
         
-      </div>
-      <div className="row">
-        <Editor
-          sections={sections}
-          information={resumeInformation}
-          setInformation={setResumeInformation}
-        />
-        <Resume
-          ref={resumeRef}
-          sections={sections}
-          information={resumeInformation}
-          activeColor={activeColor}
-        />
+          <Editor
+            sections={sections}
+            information={resumeInformation}
+            setInformation={setResumeInformation}
+          />
+        </div>
+        <div className="d-small-none col-lg-6">
+          <Resume
+            ref={resumeRef}
+            sections={sections}
+            information={resumeInformation}
+            activeColor={activeColor}
+          />
+        </div>
       </div>
             { status && (
             <Modal closeModal={() => setStatus(false)}> 

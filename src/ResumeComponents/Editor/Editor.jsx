@@ -569,7 +569,7 @@ function Editor(props) {
   }, [activeDetailIndex]);
 
   return (
-    <div className="editor col-lg-6">
+    <div className="editor">
       <div className={styles.header}>
         {Object.keys(sections)?.map((key) => (
           <div
