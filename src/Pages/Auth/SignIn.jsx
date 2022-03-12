@@ -5,6 +5,20 @@ import { FaGoogle, FaGithub} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 export default class SignIn extends Component {
+    constructor(props){
+        super();
+    
+        this.state = {
+            value: ''
+        }
+    
+        this.handleAuth = this.handleAuth.bind(this)
+      }
+
+      handleAuth = (e) => {
+        alert("Ready to Create the best resume")
+    }
+
   render() {
     return (
     <div className="auth-wrapper">
@@ -31,9 +45,7 @@ export default class SignIn extends Component {
                                     Remember Me</label>
                             </div>
                         </div>
-                        <Link to="/template" className="btn btn-primary w-100 mb-3" onClick={() => {
-                            alert("User is Login")
-                        }}>
+                        <Link to="/template" className="btn btn-primary w-100 mb-3" onClick={this.handleAuth}>
                             Login
                         </Link>
                         <hr/>

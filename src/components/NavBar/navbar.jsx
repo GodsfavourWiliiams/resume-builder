@@ -5,7 +5,7 @@ import { FiSettings, FiLogOut } from "react-icons/fi";
 import "./NavBar.css";
 import Logo from '../images/logo.png';
 import Avatar from '../images/avatar-2.jpg';
-import Setting from "../reUseableComponents/Setting";
+import Setting from "../reUseableComponents/tabsComponet";
 
 const Navbar = () => {
   const [isNavScroll, setIsNavScroll] = useState(false);
