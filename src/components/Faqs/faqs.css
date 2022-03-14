@@ -14,3 +14,13 @@
     max-height: 9999px;
     transition: all 0.6s cubic-bexier(0, 1, 0, 1);
 }
+
+.faqs {
+    max-width: 550px;
+    width: 100%;
+}
+
+.faqs-title {
+    font-size: 18px;
+    font-weight: 700;
+}

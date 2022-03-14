@@ -15,7 +15,7 @@ export default class Footer extends Component{
         <h4>Join Our Newsletter</h4>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo expedita voluptas culpa sapiente.</p>
         <form action="" method="post">
-          <input type="email" className='rounded' name="email"/><input type="submit" className='rounded-3' value="Subscribe"/>
+          <input type="email" className='rounded' name="email"/><input type="submit" className='rounded-3 bg-primary' value="Subscribe"/>
         </form>
       </div>
     </div>

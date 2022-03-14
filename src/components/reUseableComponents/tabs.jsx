@@ -25,7 +25,7 @@ class Tabs extends Component {
             );
           })}
         </div>
-        <div className="mt-4">{this.props.children[this.state.selected]}</div>
+        <div className="mt-5">{this.props.children[this.state.selected]}</div>
       </>
     );
   }

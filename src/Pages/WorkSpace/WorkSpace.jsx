@@ -9,7 +9,7 @@ export default function WorkSpace() {
           <Navbar/>
             <section className="pc-container container">
               <div className="pcoded-content ">
-                     <div className="mt-5">
+                     <div className="mt-2">
                        <Body/>
                     </div>
               </div>

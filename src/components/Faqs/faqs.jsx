@@ -1,6 +1,7 @@
 import './faqs.css'
 import React from 'react';
 import { useState } from 'react';
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 
 const data =[
 {
@@ -41,26 +42,25 @@ function Accordion() {
     }
     return (
       <section className="faq">
-
-        <div className="container" data-aos="fade-up">
-
+        <div className="container">
           <header className="section-header">
               <h2>F.A.Q</h2>
               <p>Frequently Asked Questions</p>
           </header>
-            {/* <!-- F.A.Q List 1--> */}
-            <div className="accordion accordion-flush wrapper mx-auto" >
+            <div className="faqs mx-auto cursor-pointer" data-aos="fade-up">
               {data.map((item, i) => (
-                <div className="accordion-item" key={item.question}>
-                    <h2 className="" onClick={() => toggle(i)}>
-                        <div className="accordion-button collapsed fw-bold" >
+                <div className="" key={item.question}>
+                    <div className="d-flex align-items-center justify-content-between" onClick={() => toggle(i)}>
+                        <h4 className="faqs-title py-2" >
                         {item.question}
+                        </h4>
+                        <div className="">
+                        {selected === i ?  <FaAngleUp className=''/> :  <FaAngleDown className=''/>}  
                         </div>
-                    </h2>
-                    <div className={selected === i ? 'contents show' : 'contents '} >
-                        <div className="accordion-body">
+                       
+                    </div>
+                    <div className={selected === i ? 'contents show pb-2' : 'contents'} >
                           {item.answer}
-                        </div>
                     </div>
                 </div>
                 ))}

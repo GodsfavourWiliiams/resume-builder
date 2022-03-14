@@ -750,3 +750,29 @@ section {
     font-size: 0.8rem;
     left: 0.8rem;
 }
+
+.bids-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.bids-container-card {
+    margin: 0 -5px;
+}
+
+.bids-card {
+    background: #2A2D3A;
+    border-radius: 10px;
+    padding: 11px 12px 19px 11px;
+    margin-inline: 10px;
+    margin-bottom: 20px;
+}
+
+.bids-card img {
+    border-radius: 10px;
+    width: 100%;
+}

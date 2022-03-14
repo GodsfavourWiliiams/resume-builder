@@ -1,9 +1,26 @@
 import React from 'react';
+// import bids1 from '../../images/bids1.png'
+// import bids2 from '../../images/bids2.png'
 
-export default function template() {
+const Header = () => {
   return (
-    <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione veritatis odio vero. Maxime, eligendi. Quae dolor pariatur libero. At adipisci sapiente accusamus, neque nam nemo nobis fuga ad eum dolor.
-    </div>
+  <div>
+        <div className="card-column" >
+          <div className="bids-card">
+            <div className="bids-card-top">
+              {/* <img src={bids1} alt="" /> */}
+            </div>
+          </div>
+        </div>
+        <div className="card-column" >
+          <div className="bids-card">
+            <div className="bids-card-top">
+              {/* <img src={bids2} alt="" /> */}
+            </div>
+            </div>
+          </div>
+      </div>
   )
 }
+
+export default Header
