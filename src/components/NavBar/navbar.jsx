@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import { FiSettings, FiLogOut } from "react-icons/fi";
 import "./NavBar.css";
-import Logo from '../images/logo.png';
-import Avatar from '../images/avatar-2.jpg';
+import Logo from '../../Assets/logo.png';
+import Avatar from '../../Assets/avatar-2.jpg';
 import Setting from "../reUseableComponents/tabsComponet";
 
 const Navbar = () => {
@@ -18,12 +18,7 @@ const Navbar = () => {
   }
 
   const changeNavbarColor = () =>{
-      if (window.scrollY >= 60){
-            setIsNavScroll(true)
-      }
-      else{
-        setIsNavScroll(false)
-      }
+      window.scrollY >= 60 ?  setIsNavScroll(true) : setIsNavScroll(false)
   }
   
   window.addEventListener("scroll", changeNavbarColor);
@@ -37,19 +32,24 @@ const Navbar = () => {
             <span>rBuilder</span>
         </a>
         
-        
       {useLocation().pathname === '/' ?
          <nav className={`navbars`} >
-        
             <ul className={`ul  ${isOpen && "show-menu"}`}>
                 <li><a className="nav-link scrollto" href="/">About</a></li>
                 <Link to="/SignIn" className="text-decoration-none">
                     <button className="btn btn-primary"> Log In</button>         
                 </Link>
             </ul>
-        
-          <FaBars className="mobile-nav-toggle" onClick={() => setIsOpen(!isOpen)}/>
-
+          <div className="mobile-nav-toggle menu cross menu--1">
+            <label >
+             <input type="checkbox" onClick={() => setIsOpen(!isOpen)}/>
+            <svg viewBox="0 0 100 100">
+              <path className="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
+              <path className="line--2" d="M0 50h70" />
+              <path className="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
+            </svg>
+          </label>
+        </div>
       </nav>
 
       :
@@ -71,17 +71,17 @@ const Navbar = () => {
 
       }
      
-                    <div className={`sidebar ${isSideOpen === true ? 'active' : ''}`}>
-                        <div className="sd-header">
-                            <h4 className="mb-0">Settings</h4>
-                            <div className="btn btn-primary p-0" onClick={ToggleSidebar}><FaTimes className="m-2"/></div>
-                        </div>
-                        <div className="sd-body">
+           <div className={`sidebar ${isSideOpen === true ? 'active' : ''}`}>
+                <div className="sd-header">
+                     <h4 className="mb-0">Settings</h4>
+                     <div className="btn btn-primary p-0" onClick={ToggleSidebar}><FaTimes className="m-2"/></div>
+                </div>
+                  <div className="sd-body">
                           <Setting/>
-                        </div>
-                    </div>
-                <div className={`sidebar-overlay ${isSideOpen === true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
+                  </div>
             </div>
+                <div className={`sidebar-overlay ${isSideOpen === true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
+          </div>
 </header>
   );
 };

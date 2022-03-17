@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ImageOne from '../images/Saly-1.png';
-import ImageTwo from '../images/Saly-31.png';
-import ImageThree from '../images/Other 09.svg';
+import ImageOne from '../../Assets/Saly-1.png';
+import ImageTwo from '../../Assets/Saly-31.png';
+import ImageThree from '../../Assets/Other 09.svg';
 import './whyUs.css';
 export class whyus extends Component {
     render() {

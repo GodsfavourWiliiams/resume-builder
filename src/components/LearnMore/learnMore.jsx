@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import PricingFree from '../images/Saly-5.png';
-import PricingStarter from '../images/Saly-3.png';
-import PricingBusiness from '../images/Saly-32.png';
-import PricingUltimate from '../images/Saly-19.png';
+import PricingFree from '../../Assets/Saly-5.png';
+import PricingStarter from '../../Assets/Saly-3.png';
+import PricingBusiness from '../../Assets/Saly-32.png';
+import PricingUltimate from '../../Assets/Saly-19.png';
 export class learnMore extends Component {
     render() {
         return (

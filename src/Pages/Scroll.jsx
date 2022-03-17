@@ -22,8 +22,15 @@ const ScrollToTop = () => {
   return (
     <Fragment>
       {showButton && (
-        <button onClick={scrollToTop} className="back-to-top border-0 d-flex align-items-center justify-content-center rounded ">
-        <FaAngleUp/>
+        <button onClick={scrollToTop} className="back-to-top
+        bg-primary
+        border-0 
+        px-3
+        d-flex 
+        align-items-center
+        justify-content-center 
+        rounded ">
+        <FaAngleUp className=""/>
         </button>
         
       )}

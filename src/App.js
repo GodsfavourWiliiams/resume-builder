@@ -7,6 +7,7 @@ import SignIn from './Pages/Auth/SignIn';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Template from './Pages/Template/Template';
 import WorkSpace from './Pages/WorkSpace/WorkSpace';
+import Intro from './Pages/Template/intro';
 export class App extends Component {
     render() {
         return ( 
@@ -14,6 +15,7 @@ export class App extends Component {
              <Routes>
                 <Route path="/" element={ <LandingPage /> } />
                 <Route path='/template' element={ <Template/> }/>
+                <Route path='/Intro' element={ <Intro/> }/>
                 <Route path='/Workspace' element={ <WorkSpace/> }/>
                 <Route path="/signIn" element={ <SignIn /> } />
                 <Route path="/signUp" element={ <SignUp /> } />

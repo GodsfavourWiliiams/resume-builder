@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState , useEffect} from "react";
 import Editor from "../Editor/Editor";
 import Resume from "../ResumeBody/ResumeBody";
 import Modal from '../../components/reUseableComponents/Modal';
-
+import Loader from "../../components/loader/loader";
+import { FaTimes } from 'react-icons/fa';
 import styles from "./Body.module.css";
 
 function Body() {
@@ -13,6 +14,7 @@ function Body() {
    "#FFEB3B","#FFC107","#FF9800","#FF5722",
    "#795548","#9E9E9E","#607D8B","#7f8188",
    "#212121","#263238","#000","#091731",];
+
   const sections = {
     basicInfo: "Basic Info",
     workExp: "Work Experience",
@@ -22,6 +24,7 @@ function Body() {
     summary: "Summary",
     other: "Other",
   };
+  
   const resumeRef = useRef();
   const [status, setStatus] = useState(false);
 
@@ -64,8 +67,21 @@ function Body() {
     },
   });
 
-  return (
-    <div className="">
+   // Loading state 
+   const [isLoading, setIsLoading] = useState(true);
+  
+   useEffect(() => {
+   
+     // Wait for 3 seconds
+     setTimeout(() => {
+       setIsLoading(false);
+     }, 7000);
+   }, []);
+   
+
+  return isLoading ?
+  <Loader/> :
+    <div className="mt-5 ">
      <div className="row">
       <div className="col-lg-6">
             <div className={styles.colors}>
@@ -80,14 +96,14 @@ function Body() {
                 />
               ))}
             </div>
-        
+     
           <Editor
             sections={sections}
             information={resumeInformation}
             setInformation={setResumeInformation}
           />
         </div>
-        <div className="d-small-none col-lg-6">
+        <div className="d-small-none col-lg-6 mt-3">
           <Resume
             ref={resumeRef}
             sections={sections}
@@ -96,21 +112,25 @@ function Body() {
           />
         </div>
       </div>
+          <div className="d-lg-none">
             { status && (
-            <Modal closeModal={() => setStatus(false)}> 
-        <Resume
-          ref={resumeRef}
-          sections={sections}
-          information={resumeInformation}
-          activeColor={activeColor}
-        />
+            <Modal  closeModal={() => setStatus(false)}> 
+             <FaTimes className='times'
+             onClick={() => setStatus(false)}
+            />
+              <Resume
+                ref={resumeRef}
+                sections={sections}
+                information={resumeInformation}
+                activeColor={activeColor}
+              />
             </Modal>)}
+          </div>
           <button className='btn btn-primary preview d-lg-none' 
-          onClick={() => setStatus(true)}>
+            onClick={() => setStatus(true)}>
             Preview
-            </button>
+          </button>
     </div>
-  );
 }
 
 export default Body;

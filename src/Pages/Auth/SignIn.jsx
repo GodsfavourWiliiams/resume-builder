@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Logo from '../../components/images/CustomLogo.png';
+import Logo from '../../Assets/CustomLogo.png';
 import './Auth.css';
 import { FaGoogle, FaGithub} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -39,13 +39,13 @@ export default class SignIn extends Component {
                         <label for="password" className="form__label">Password</label>
                     </div>
                         <div className="form-group">
-                            <div className="d-flex align-items-center gap-1">
-                                <input type="checkbox" className="form-check-input p-1" />
-                                <label className="form-check-label " htmlFor="customCheck">
+                            <div className="d-flex align-items-center ">
+                                <input type="checkbox" className="form-check-input p-1 me-2" />
+                                <label className="form-check-label mt-1" htmlFor="customCheck">
                                     Remember Me</label>
                             </div>
                         </div>
-                        <Link to="/template" className="btn btn-primary w-100 mb-3" onClick={this.handleAuth}>
+                        <Link to="/template" className="btn btn-primary w-100 my-3" onClick={this.handleAuth}>
                             Login
                         </Link>
                         <hr/>

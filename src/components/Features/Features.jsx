@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Features.css';
-import FeatureImg from '../images/Other 01.png';
+import FeatureImg from '../../Assets/Other 01.png';
 import { FaCheck } from 'react-icons/fa';
 
 

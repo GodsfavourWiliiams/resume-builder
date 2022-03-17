@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FaGoogle, FaFacebook} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Logo from '../../components/images/CustomLogo.png';
+import Logo from '../../Assets/CustomLogo.png';
 import './Auth.css';
 
 export default class SignUp extends Component {

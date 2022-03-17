@@ -1,8 +1,4 @@
-import React, {
-   forwardRef,
-    useEffect,
-     useRef, 
-     useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { 
   FaCalendar,
    FaGithub, FaLinkedin,
@@ -45,9 +41,8 @@ const Resume = forwardRef((props, ref) => {
         draggable
         onDragOver={() => seTarget(info.workExp?.id)}
         onDragEnd={() => setSource(info.workExp?.id)}
-        className={`${styles.section} ${
-          info.workExp?.sectionTitle ? "" : styles.hidden
-        }`}
+        className={`${styles.section} 
+        ${info.workExp?.sectionTitle ? '' : styles.hidden }`}
       >
         <div className={styles.sectionTitle}>{info.workExp.sectionTitle}</div>
         <div className={styles.content}>
@@ -118,9 +113,9 @@ const Resume = forwardRef((props, ref) => {
         <div className={styles.sectionTitle}>{info.project.sectionTitle}</div>
         <div className={styles.content}>
           {info.project?.details?.map((item) => (
-            <div className={styles.item}>
+            <div className={styles.title}>
               {item.title ? (
-                <p className={styles.title}>{item.title}</p>
+                <p className={styles.titles}>{item.title}</p>
               ) : (
                 <span />
               )}
@@ -183,7 +178,7 @@ const Resume = forwardRef((props, ref) => {
                 <span />
               )}
               {item.college ? (
-                <p className={styles.subTitle}>S
+                <p className={styles.subTitle}>
                 {item.college}
                 </p>
 
