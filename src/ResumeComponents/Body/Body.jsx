@@ -72,7 +72,7 @@ function Body() {
   
    useEffect(() => {
    
-     // Wait for 3 seconds
+     // Wait for 7 seconds
      setTimeout(() => {
        setIsLoading(false);
      }, 7000);

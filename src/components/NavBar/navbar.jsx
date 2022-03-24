@@ -24,7 +24,7 @@ const Navbar = () => {
   window.addEventListener("scroll", changeNavbarColor);
       
   return (
-  <header className={isNavScroll ? ' bg-white shadow-sm fixed-top py-1 header d-flex align-items-center' : 'header d-flex align-items-center py-3 fixed-top'}>
+  <header className={isNavScroll ? ' bg-white fixed-top py-1 header d-flex align-items-center' : 'header d-flex align-items-center py-3 fixed-top'}>
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
         <a href="/" className="logo d-flex align-items-center gap-2 text-decoration-none">
@@ -40,13 +40,13 @@ const Navbar = () => {
                     <button className="btn btn-primary"> Log In</button>         
                 </Link>
             </ul>
-          <div className="mobile-nav-toggle menu cross menu--1">
-            <label >
+          <div className="mobile-nav-toggle menu cross menu--1" >
+            <label style={{width: '50px', height: '40px'}}>
              <input type="checkbox" onClick={() => setIsOpen(!isOpen)}/>
-            <svg viewBox="0 0 100 100">
-              <path className="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
+            <svg viewBox="0 0 100 100" style={{width: '70px', height: '50px'}}>
+              <path className="line--1" d="M0 35h62c9 0 8 28-4 25L35 40" />
               <path className="line--2" d="M0 50h70" />
-              <path className="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
+              <path className="line--3" d="M0 65h62c9 0 8-28-4-25L35 60" />
             </svg>
           </label>
         </div>

@@ -9,6 +9,7 @@ export default class SignIn extends Component {
         super();
     
         this.state = {
+            isLogIn: true,
             value: ''
         }
     
@@ -16,7 +17,10 @@ export default class SignIn extends Component {
       }
 
       handleAuth = (e) => {
-        alert("Ready to Create the best resume")
+        //   e.preventDefault()
+          this.setState(prevState =>({
+              isLogIn: !prevState.isLogIn
+          }))
     }
 
   render() {
@@ -28,7 +32,7 @@ export default class SignIn extends Component {
                         <img src={Logo} alt="" className='my-2' />
                         <h1 className="h4 text-gray-900 mb-4">Welcome Back!</h1>
                     </div>
-                    <form className="user mx-auto">
+                <form className="user mx-auto">
                      
                    <div className="form">
                         <input type="text" className="form__input" placeholder=" "/>
@@ -46,7 +50,7 @@ export default class SignIn extends Component {
                             </div>
                         </div>
                         <Link to="/template" className="btn btn-primary w-100 my-3" onClick={this.handleAuth}>
-                            Login
+                            {this.state.isLogIn ? 'Login' : 'Loging In'}
                         </Link>
                         <hr/>
                         <a href="/" className="btn btn-success my-3  w-100">

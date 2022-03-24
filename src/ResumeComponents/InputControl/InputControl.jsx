@@ -3,7 +3,10 @@ import React from "react";
 function InputControl({ label, ...props }) {
   return (
     <div className="form">
-        <input type="text" className="form__input" placeholder=" " {...props} />
+        <input 
+        type="text" 
+        className="form__input" 
+        placeholder=" " {...props} />
         {label && <label className="form__label">{label}</label>}
 </div>
   );
