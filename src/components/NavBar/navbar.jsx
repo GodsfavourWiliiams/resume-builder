@@ -33,12 +33,14 @@ const Navbar = () => {
         </Link>
         
       {useLocation().pathname === '/' ?
+      
          <nav className={`navbars`} >
             <ul className={`ul  ${isOpen && "show-menu"}`}>
                 <li><span className="nav-link scrollto">About</span></li>
                 <Link to="/SignIn" className="text-decoration-none">
                     <button className="btn btn-primary"> Log In</button>         
                 </Link>
+               
             </ul>
           <div className="mobile-nav-toggle menu cross menu--1" >
             <label style={{width: '50px', height: '40px'}}>
@@ -54,22 +56,26 @@ const Navbar = () => {
 
       :
 
-    <div className="">
+    <div className="d-flex">
+     
       <div onClick={() => setIsProfileOpen(!isProfileOpen)}>
-          <span className="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+          <span className="mr-2 d-none d-lg-inline text-gray-600 small">Blessing Asuk </span>
           <img className="img-profile rounded-circle" alt="profile" src={Avatar}/>
       </div>
+      
       <ul className={`profile ${isProfileOpen && "show-profile shadow-sm bg-white rounded animated--grow-in"}`}>
           <li className="dropdown-item py-2" onClick={ToggleSidebar}>
-              <FiSettings className="mr-2 text-gray-400"/> Settings
+              <FiSettings className="mr-2"/> Settings
           </li>
           <Link to="/SignIn" className="dropdown-item py-2">
-              <FiLogOut className="mr-2 text-gray-400"/> Logout
+              <FiLogOut className="mr-2"/> Logout
           </Link>
+         
         </ul>
   </div>
 
       }
+      
      
            <div className={`sidebar ${isSideOpen === true ? 'active' : ''}`}>
                 <div className="sd-header">
