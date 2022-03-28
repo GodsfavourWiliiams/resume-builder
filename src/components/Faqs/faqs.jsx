@@ -47,7 +47,7 @@ function Accordion() {
               <h2>F.A.Q</h2>
               <p>Frequently Asked Questions</p>
           </header>
-            <div className="faqs mx-auto cursor-pointer" data-aos="fade-up">
+            <div className="faqs mx-auto cursor-pointer">
               {data.map((item, i) => (
                 <div className="" key={item.question}>
                     <div className="d-flex align-items-center justify-content-between" onClick={() => toggle(i)}>

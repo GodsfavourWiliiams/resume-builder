@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isSideOpen, setIsSideopen] = useState(false);
 
   const ToggleSidebar = () => {
-    isSideOpen === true ? setIsSideopen(false) : setIsSideopen(true);
+    isSideOpen ? setIsSideopen(false) : setIsSideopen(true);
   }
 
   const changeNavbarColor = () =>{
@@ -27,15 +27,15 @@ const Navbar = () => {
   <header className={isNavScroll ? ' bg-white fixed-top py-1 header d-flex align-items-center' : 'header d-flex align-items-center py-3 fixed-top'}>
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-        <a href="/" className="logo d-flex align-items-center gap-2 text-decoration-none">
+        <Link to="/" className="logo d-flex align-items-center gap-2 text-decoration-none">
             <img src={Logo} alt="" />
             <span>rBuilder</span>
-        </a>
+        </Link>
         
       {useLocation().pathname === '/' ?
          <nav className={`navbars`} >
             <ul className={`ul  ${isOpen && "show-menu"}`}>
-                <li><a className="nav-link scrollto" href="/">About</a></li>
+                <li><span className="nav-link scrollto">About</span></li>
                 <Link to="/SignIn" className="text-decoration-none">
                     <button className="btn btn-primary"> Log In</button>         
                 </Link>

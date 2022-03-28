@@ -3,20 +3,22 @@ import PricingFree from '../../Assets/Saly-5.png';
 import PricingStarter from '../../Assets/Saly-3.png';
 import PricingBusiness from '../../Assets/Saly-32.png';
 import PricingUltimate from '../../Assets/Saly-19.png';
+
+
 export class learnMore extends Component {
     render() {
         return (
-    <section id="pricing" className="pricing">
-            <div className="container" data-aos="fade-up">
+    <section className="pricing">
+            <div className="container" >
 
                 <header className="section-header">
                     <h2>Pricing</h2>
                     <p>Check our Pricing</p>
                 </header>
 
-            <div className="row gy-4" data-aos="fade-left">
+            <div className="row gy-4" >
 
-                <div className="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                <div className="col-lg-3 col-md-6">
                     <div className="box">
                         <h3 className=''>Free Plan</h3>
                         <div className="price"><sup>$</sup>0<span> / mo</span></div>
@@ -28,7 +30,7 @@ export class learnMore extends Component {
                     </div>
                 </div>
 
-                <div className="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                <div className="col-lg-3 col-md-6">
                     <div className="box">
                         <span className="featured">Featured</span>
                         <h3 className=''>Starter Plan</h3>
@@ -41,7 +43,7 @@ export class learnMore extends Component {
                     </div>
                 </div>
 
-                <div className="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                <div className="col-lg-3 col-md-6">
                     <div className="box">
                         <h3 className=''>Business Plan</h3>
                         <div className="price"><sup>$</sup>29<span> / mo</span></div>
@@ -53,7 +55,7 @@ export class learnMore extends Component {
                     </div>
                 </div>
 
-                <div className="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                <div className="col-lg-3 col-md-6">
                     <div className="box">
                         <h3 className=''>Ultimate Plan</h3>
                         <div className="price"><sup>$</sup>49<span> / mo</span></div>

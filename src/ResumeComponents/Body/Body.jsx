@@ -1,9 +1,10 @@
 import React, { useRef, useState , useEffect} from "react";
 import Editor from "../Editor/Editor";
+import ReactToPrint from "react-to-print";
 import Resume from "../ResumeBody/ResumeBody";
 import Modal from '../../components/reUseableComponents/Modal';
 import Loader from "../../components/loader/loader";
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaAngleDown } from 'react-icons/fa';
 import styles from "./Body.module.css";
 
 function Body() {
@@ -13,10 +14,16 @@ function Body() {
    "#009688","#4CAF50","#8BC34A","#CDDC39",
    "#FFEB3B","#FFC107","#FF9800","#FF5722",
    "#795548","#9E9E9E","#607D8B","#7f8188",
-   "#212121","#263238","#000","#091731",];
+   "#212121","#263238","#000","#091731",
+  ];
+
+  const fonts = [
+    'monospace', 'Arial Narrow',
+    'Georgia', 'Segoe UI', 'Tahoma', 'Verdana'
+  ];
 
   const sections = {
-    basicInfo: "Basic Info",
+    personalInfo: "Personal Info",
     workExp: "Work Experience",
     project: "Projects",
     education: "Education",
@@ -29,10 +36,12 @@ function Body() {
   const [status, setStatus] = useState(false);
 
   const [activeColor, setActiveColor] = useState(colors[0]);
+  const [activeFont, setActiveFont] = useState(fonts[0]);
+
   const [resumeInformation, setResumeInformation] = useState({
-    [sections.basicInfo]: {
-      id: sections.basicInfo,
-      sectionTitle: sections.basicInfo,
+    [sections.personalInfo]: {
+      id: sections.personalInfo,
+      sectionTitle: sections.personalInfo,
       detail: {},
     },
     [sections.workExp]: {
@@ -71,7 +80,6 @@ function Body() {
    const [isLoading, setIsLoading] = useState(true);
   
    useEffect(() => {
-   
      // Wait for 7 seconds
      setTimeout(() => {
        setIsLoading(false);
@@ -81,7 +89,7 @@ function Body() {
 
   return isLoading ?
   <Loader/> :
-    <div className="mt-5 ">
+    <div className="mt-lg-5 mt-3">
      <div className="row">
       <div className="col-lg-6">
             <div className={styles.colors}>
@@ -96,25 +104,46 @@ function Body() {
                 />
               ))}
             </div>
-     
+            <div className="mb-3 d-flex flex-wrap ">
+                  {fonts.map((font) => (
+                    <span key={font} className={`${activeFont === font ? "bg-primary text-white cursor-pointer mx-2 px-2 py-2 rounded" : "bg-white text-black cursor-pointer mx-2 px-2 py-2 border rounded"} `}  
+                    onClick={() => setActiveFont(font)}>
+                      {font}
+                    </span>
+                  ))
+
+                  }
+            </div>
+           
           <Editor
             sections={sections}
             information={resumeInformation}
             setInformation={setResumeInformation}
           />
         </div>
-        <div className="d-small-none col-lg-6 mt-3">
+        <div className="d-small-none col-lg-6">
           <Resume
             ref={resumeRef}
             sections={sections}
             information={resumeInformation}
             activeColor={activeColor}
+            activeFont={activeFont}
           />
         </div>
       </div>
+      <ReactToPrint
+              trigger={() => {
+                return (
+                  <button className="btn btn-primary px-3 preview py-2">
+                    Download <FaAngleDown />
+                  </button>
+                );
+              }}
+              content={() => resumeRef.current}
+            />
           <div className="d-lg-none">
             { status && (
-            <Modal  closeModal={() => setStatus(false)}> 
+            <Modal mobilePreviewBackground="bg-white"  closeModal={() => setStatus(false)}> 
              <FaTimes className='times'
              onClick={() => setStatus(false)}
             />
@@ -130,6 +159,7 @@ function Body() {
             onClick={() => setStatus(true)}>
             Preview
           </button>
+          
     </div>
 }
 

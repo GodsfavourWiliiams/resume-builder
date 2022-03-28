@@ -7,6 +7,8 @@ import LearnMore from '../components/LearnMore/learnMore';
 import Footer from '../components/Footer/footer';
 import Faqs from '../components/Faqs/faqs';
 import ScrollToTop from './Scroll';
+
+
 export default class LandingPage extends Component {
   render() {
     return (

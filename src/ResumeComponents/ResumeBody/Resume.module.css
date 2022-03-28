@@ -1,20 +1,21 @@
 .container {
-    max-width: 550px;
+    max-width: 800px;
     width: 100%;
     margin: 0 auto;
     flex: 1.2;
-    height: 600px;
+    height: 1122.5px;
     border: solid 1px rgb(199, 197, 197);
     border-radius: 2px;
     display: flex;
     flex-direction: column;
     background-color: #fff;
+    font-family: var(--Font)
 }
 
 .header {
     background-color: var(--color);
     padding: 10px;
-    height: 150px;
+    height: 250px;
     margin-bottom: 20px;
 }
 
@@ -58,19 +59,7 @@
     padding: 10px;
 }
 
-.col1 {
-    flex: 1.3;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
-.col2 {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
 .section .sectionTitle {
     font-size: .5rem;

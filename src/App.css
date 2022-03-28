@@ -615,7 +615,7 @@ section {
 .overlay {
     position: fixed;
     display: block;
-    overflow: auto;
+    overflow: hidden;
     width: 100%;
     height: 100%;
     top: 0;
@@ -627,13 +627,12 @@ section {
     cursor: pointer;
 }
 
-.content {
-    margin: 15% auto;
-    /* background-color: white; */
+.modalContent {
+    margin: 0 auto;
     border-radius: 0.25rem;
     max-width: 450px;
     width: 100%;
-    padding: 2rem;
+    padding-top: 2rem;
     position: relative;
 }
 
@@ -646,7 +645,13 @@ section {
     min-width: 100%;
     min-height: 100vh;
 }
-
+.times {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+}
 .nav-link {
     color: #4a5568;
 }
@@ -813,13 +818,7 @@ section {
     height: 100%;
 }
 
-.times {
-    cursor: pointer;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    z-index: 9999;
-}
+
 
 .menu input {
     display: none;
@@ -848,7 +847,7 @@ section {
     top: 10px;
 }
 
-path {
+.menu--1 path {
     fill: none;
     stroke: #000;
     stroke-width: 8;

@@ -206,7 +206,7 @@ function Editor(props) {
       </div>
     </div>
   );
-  const basicInfoBody = (
+  const personalInfoZBody = (
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
@@ -310,8 +310,8 @@ function Editor(props) {
 
   const generateBody = () => {
     switch (sections[activeSectionKey]) {
-      case sections.basicInfo:
-        return basicInfoBody;
+      case sections.personalInfo:
+        return personalInfoZBody;
       case sections.workExp:
         return workExpBody;
       case sections.project:
@@ -331,7 +331,7 @@ function Editor(props) {
  
   const handleSubmission = (e) => {
         switch (sections[activeSectionKey]) {
-        case sections.basicInfo: {
+        case sections.personalInfo: {
           const tempDetail = {
             name: values.name,
             title: values.title,
@@ -343,8 +343,8 @@ function Editor(props) {
   
           props.setInformation((prev) => ({
             ...prev,
-            [sections.basicInfo]: {
-              ...prev[sections.basicInfo],
+            [sections.personalInfo]: {
+              ...prev[sections.personalInfo],
               detail: tempDetail,
               sectionTitle,
             },

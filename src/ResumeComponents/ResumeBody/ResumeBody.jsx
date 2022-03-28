@@ -22,7 +22,7 @@ const Resume = forwardRef((props, ref) => {
     project: information[sections.project],
     achievement: information[sections.achievement],
     education: information[sections.education],
-    basicInfo: information[sections.basicInfo],
+    personalInfo: information[sections.personalInfo],
     summary: information[sections.summary],
     other: information[sections.other],
   };
@@ -305,39 +305,46 @@ const Resume = forwardRef((props, ref) => {
     container.style.setProperty("--color", props.activeColor);
   }, [props.activeColor]);
 
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!props.activeFont || !container) return;
+
+    container.style.setProperty("--Font", props.activeFont);
+  }, [props.activeFont]);
+
   return (
     <div ref={ref} className="">
       <div ref={containerRef} className={styles.container}>
         <div className={styles.header}>
-          <p className={styles.name}>{info.basicInfo?.detail?.name}</p>
-          <p className={styles.subHeading}>{info.basicInfo?.detail?.title}</p>
+          <p className={styles.name}>{info.personalInfo?.detail?.name}</p>
+          <p className={styles.subHeading}>{info.personalInfo?.detail?.title}</p>
 
           <div className="">
-            {info.basicInfo?.detail?.email ? (
+            {info.personalInfo?.detail?.email ? (
               <a href=".." className={styles.link} type="email">
-                <FaEnvelope /> {info.basicInfo?.detail?.email}
+                <FaEnvelope /> {info.personalInfo?.detail?.email}
               </a>
             ) : (
               <span />
             )}
-            {info.basicInfo?.detail?.linkedin ? (
-              <a href="info.basicInfo?.detail?.linkedin" className={styles.link}>
-                <FaLinkedin /> {info.basicInfo?.detail?.linkedin}
+            {info.personalInfo?.detail?.linkedin ? (
+              <a href="info.personalInfo?.detail?.linkedin" className={styles.link}>
+                <FaLinkedin /> {info.personalInfo?.detail?.linkedin}
               </a>
             ) : (
               <span />
             )}
-            {info.basicInfo?.detail?.github ? (
+            {info.personalInfo?.detail?.github ? (
               <a href=".." className={styles.link}>
-                <FaGithub /> {info.basicInfo?.detail?.github}
+                <FaGithub /> {info.personalInfo?.detail?.github}
               </a>
             ) : (
               <span />
             )}
-             {info.basicInfo?.detail?.phone ? (
+             {info.personalInfo?.detail?.phone ? (
               <a href=".." className={styles.link}>
                 <FaPhone /> 
-                {info.basicInfo?.detail?.phone}
+                {info.personalInfo?.detail?.phone}
               </a>
             ) : (
               <span />
@@ -345,11 +352,11 @@ const Resume = forwardRef((props, ref) => {
           </div>
         </div>
 
-        <div className={styles.main}>
-          <div className={styles.col1}>
+        <div className="row px-2 cursor-pointer">
+          <div className="col-6">
             {columns[0].map((item) => sectionDiv[item])}
           </div>
-          <div className={styles.col2}>
+          <div className="col-6">
             {columns[1].map((item) => sectionDiv[item])}
           </div>
         </div>

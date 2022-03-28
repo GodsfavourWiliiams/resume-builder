@@ -25,12 +25,12 @@ const ScrollToTop = () => {
         <button onClick={scrollToTop} className="back-to-top
         bg-primary
         border-0 
-        px-3
+        p-2
         d-flex 
         align-items-center
         justify-content-center 
         rounded ">
-        <FaAngleUp className=""/>
+        <FaAngleUp />
         </button>
         
       )}
