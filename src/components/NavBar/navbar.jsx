@@ -3,15 +3,20 @@ import { Link, useLocation } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { FiSettings, FiLogOut } from "react-icons/fi";
 import "./NavBar.css";
-import Logo from '../../Assets/logo.png';
 import Avatar from '../../Assets/avatar-2.jpg';
 import Setting from "../reUseableComponents/tabsComponet";
 
+
+
+
+
 const Navbar = () => {
+
   const [isNavScroll, setIsNavScroll] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isSideOpen, setIsSideopen] = useState(false);
+
 
   const ToggleSidebar = () => {
     isSideOpen ? setIsSideopen(false) : setIsSideopen(true);
@@ -28,7 +33,6 @@ const Navbar = () => {
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
         <Link to="/" className="logo d-flex align-items-center gap-2 text-decoration-none">
-            <img src={Logo} alt="" />
             <span>rBuilder</span>
         </Link>
         
@@ -56,8 +60,7 @@ const Navbar = () => {
 
       :
 
-    <div className="d-flex">
-     
+    <div className="d-flex">                
       <div onClick={() => setIsProfileOpen(!isProfileOpen)}>
           <span className="mr-2 d-none d-lg-inline text-gray-600 small">Blessing Asuk </span>
           <img className="img-profile rounded-circle" alt="profile" src={Avatar}/>
@@ -88,6 +91,7 @@ const Navbar = () => {
             </div>
                 <div className={`sidebar-overlay ${isSideOpen === true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
           </div>
+          
 </header>
   );
 };

@@ -26,7 +26,7 @@ export class learnMore extends Component {
                         <p className='my-3'>
                             For individuals and small teams to create and download designs for any occassion
                         </p>
-                        <a href="/" className="btn-buy btn border-primary rounded">Buy Now</a>
+                        <button className="btn-buy btn btn-primary rounded">Buy Now</button>
                     </div>
                 </div>
 
@@ -39,7 +39,7 @@ export class learnMore extends Component {
                         <p className='my-3'>
                         For individuals and small team who wants mre advance tool and more content
                         </p>
-                        <a href="/" className="btn-buy btn border-primary rounded">Buy Now</a>
+                        <button className="btn-buy btn btn-primary rounded">Buy Now</button>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ export class learnMore extends Component {
                         <p className='my-3'>
                         For Start Ups business seeking and integrated tool to keep their brand consistent
                         </p>
-                        <a href="/" className="btn-buy btn border-primary rounded">Buy Now</a>
+                        <button className="btn-buy btn btn-primary rounded">Buy Now</button>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@ export class learnMore extends Component {
                         <p className='my-3'>
                             For large business looking for powerfull creative tool for their organisation 
                         </p>
-                        <a href="/" className="btn border-primary rounded btn-buy">Buy Now</a>
+                        <button className="btn-buy btn btn-primary rounded">Buy Now</button>
                     </div>
                 </div>
 

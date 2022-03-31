@@ -5,10 +5,10 @@ import Body from '../../ResumeComponents/Body/Body'
 export default function WorkSpace() {
   
     return (
-      <div>
+      <div className='overflow-hidden'>
           <Navbar/>
-            <section className="pc-container container">
-              <div className="pcoded-content ">
+            <section className="">
+              <div className="container">
                      <div className="mt-2">
                        <Body/>
                     </div>

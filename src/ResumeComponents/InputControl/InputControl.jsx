@@ -1,13 +1,14 @@
 import React from "react";
 
-function InputControl({ label, ...props }) {
+function InputControl({ label, className, ...props }) {
   return (
-    <div className="form">
+    <div className="form-group">
+       {label && <label className="form-label">{label}</label>}
         <input 
         type="text" 
-        className="form__input" 
+        className={`form-input ${className}`}
         placeholder=" " {...props} />
-        {label && <label className="form__label">{label}</label>}
+       
 </div>
   );
 }

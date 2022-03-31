@@ -23,7 +23,7 @@ const ScrollToTop = () => {
     <Fragment>
       {showButton && (
         <button onClick={scrollToTop} className="back-to-top
-        bg-primary
+        bg-initial
         border-0 
         p-2
         d-flex 

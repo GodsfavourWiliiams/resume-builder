@@ -37,6 +37,7 @@ function Editor(props) {
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Job Title"
           value={values.title}
           onChange={(event) =>
@@ -44,6 +45,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        className="bg-indigo"
           label="Company Name"
           value={values.companyName}
           onChange={(event) =>
@@ -53,6 +55,7 @@ function Editor(props) {
       </div>
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Certificate Link"
           value={values.certificationLink}
           onChange={(event) =>
@@ -63,6 +66,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        className="bg-indigo"
           label="Location"
           value={values.location}
           onChange={(event) =>
@@ -72,6 +76,7 @@ function Editor(props) {
       </div>
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Start Date"
           type="date"
           value={values.startDate}
@@ -80,6 +85,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        className="bg-indigo"
           label="End Date"
           type="date"
           value={values.endDate}
@@ -92,16 +98,19 @@ function Editor(props) {
       <div className={styles.column}>
         <label>Enter work description</label>
         <InputControl
+        className="bg-indigo"
           label="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl
+        className="bg-indigo"
           label="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl
+        className="bg-indigo"
           label="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
@@ -113,6 +122,7 @@ function Editor(props) {
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Title eg. Dsa traacker"
           value={values.title}
           onChange={(event) =>
@@ -121,6 +131,7 @@ function Editor(props) {
         />
       </div>
       <InputControl
+      className="bg-indigo"
         label="Overview"
         value={values.overview}
         onChange={(event) =>
@@ -129,6 +140,7 @@ function Editor(props) {
       />
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Deployed Link"
           value={values.link}
           onChange={(event) =>
@@ -136,6 +148,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        className="bg-indigo"
           label="Github Link"
           value={values.github}
           onChange={(event) =>
@@ -146,21 +159,25 @@ function Editor(props) {
       <div className={styles.column}>
         <label>Enter project description</label>
         <InputControl
+        className="bg-indigo"
          label ="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl
+        className="bg-indigo"
           label="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl
+        className="bg-indigo"
           label="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl
+        className="bg-indigo"
           label="Line 4"
           value={values.points ? values.points[3] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 3)}
@@ -172,6 +189,7 @@ function Editor(props) {
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Title eg. B-tech"
           value={values.title}
           onChange={(event) =>
@@ -180,6 +198,7 @@ function Editor(props) {
         />
       </div>
       <InputControl
+      className="bg-indigo"
         label="College/School Name"
         value={values.college}
         onChange={(event) =>
@@ -188,6 +207,7 @@ function Editor(props) {
       />
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Start Date"
           type="date"
           value={values.startDate}
@@ -196,6 +216,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        className="bg-indigo"
           label="End Date"
           type="date"
           value={values.endDate}
@@ -210,6 +231,7 @@ function Editor(props) {
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Full Name"
           value={values.name}
           onChange={(event) =>
@@ -217,6 +239,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        className="bg-indigo"
           label="Job Title"
           value={values.title}
           onChange={(event) =>
@@ -226,6 +249,7 @@ function Editor(props) {
       </div>
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Linkedin Link"
           value={values.linkedin}
           onChange={(event) =>
@@ -233,6 +257,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        className="bg-indigo"
           label="Github Link"
           value={values.github}
           onChange={(event) =>
@@ -242,6 +267,7 @@ function Editor(props) {
       </div>
       <div className={styles.row}>
         <InputControl
+        className="bg-indigo"
           label="Email"
           value={values.email}
           onChange={(event) =>
@@ -249,6 +275,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        className="bg-indigo"
           label="Enter phone"
           value={values.phone}
           onChange={(event) =>
@@ -263,21 +290,25 @@ function Editor(props) {
       <div className={styles.column}>
         <label>List your achievements</label>
         <InputControl
+        className="bg-indigo"
           label="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl
+        className="bg-indigo"
           label="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl
+        className="bg-indigo"
           label="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl
+        className="bg-indigo"
           label="Line 4"
           value={values.points ? values.points[3] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 3)}
@@ -288,6 +319,7 @@ function Editor(props) {
   const summaryBody = (
     <div className={styles.detail}>
       <InputControl
+      className="bg-indigo"
         label="Ojective/Summary"
         value={values.summary}
         onChange={(event) =>
@@ -299,6 +331,7 @@ function Editor(props) {
   const otherBody = (
     <div className={styles.detail}>
       <InputControl
+      className="bg-indigo"
         label="Other"
         value={values.other}
         onChange={(event) =>
@@ -584,6 +617,7 @@ function Editor(props) {
 
       <div className="mt-3">
         <InputControl
+        className="bg-indigo"
           label="Title"
           value={sectionTitle}
           onChange={(event) => setSectionTitle(event.target.value)}

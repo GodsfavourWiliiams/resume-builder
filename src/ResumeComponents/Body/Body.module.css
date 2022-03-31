@@ -33,10 +33,11 @@
     border-radius: .25rem;
 }
 
-.overflow1 {
-    overflow-y: hidden;
+.bg-indigo {
+    background-color: #f0f2f8;
 }
 
-.overflow2 {
-    overflow-y: auto;
+.times {
+    right: 0;
+    top: -30px;
 }

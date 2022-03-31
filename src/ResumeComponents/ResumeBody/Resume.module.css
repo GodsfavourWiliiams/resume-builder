@@ -1,14 +1,57 @@
 .container {
-    max-width: 800px;
     width: 100%;
-    margin: 0 auto;
     flex: 1.2;
-    height: 722.5px;
-    border-radius: 2px;
-    display: flex;
+    position: fixed;
+    top: -100px;
     flex-direction: column;
     background-color: #fff;
-    font-family: var(--Font)
+    box-shadow: 0 0 0 0.2rem rgba(221, 219, 252, 0.25);
+    font-family: var(--Font);
+    width: 210mm;
+    min-height: 297mm;
+    height: 100%;
+    transform: scale(0.5);
+    border: rgb(163, 162, 162) 1px solid;
+}
+
+.resume {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+@media only screen and (max-width:998px) {
+    .container {
+        width: 100%;
+        flex: 1.2;
+        border-radius: 2px;
+        position: fixed;
+        top: -200px;
+        font-family: var(--Font);
+        width: 210mm;
+        min-height: 297mm;
+        height: 100%;
+        transform: scale(0.5);
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .container {
+        width: 100%;
+        flex: 1.2;
+        border-radius: 2px;
+        position: fixed;
+        top: -200px;
+        font-family: var(--Font);
+        width: 210mm;
+        min-height: 297mm;
+        height: 100%;
+        transform: scale(0.4);
+    }
 }
 
 .header {
@@ -20,8 +63,8 @@
 
 .header .name {
     color: #fff;
-    font-size: 22px;
-    margin: 0;
+    font-size: 32px;
+    margin: 10px 0px;
     font-weight: 700;
     text-transform: capitalize;
 }
@@ -29,40 +72,41 @@
 .header .subHeading {
     color: #fff;
     font-weight: 500;
-    font-size: 0.8rem;
-    margin: 0;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
 }
 
 .header .links {
-    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .header .link {
-    font-size: 0.4rem;
+    font-size: 15px;
     display: block;
+    margin: 5px;
     cursor: pointer;
 }
 
 .header .link svg {
     color: #fff;
-    height: 16px;
-    width: 7px;
-    margin: 0 3px;
+    height: 20px;
+    width: 10px;
+    margin-right: 5px;
 }
 
 .main {
     display: flex;
     gap: 30px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .section .sectionTitle {
-    font-size: .5rem;
-    font-weight: bold;
-    width: 100%;
-    border-bottom: 2px solid #000;
+    font-size: .8rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--color);
 }
 
 .section .content {
@@ -73,7 +117,7 @@
 }
 
 .section .content .item {
-    border-bottom: 1px dotted lightgray;
+    border-bottom: 2px dotted lightgray;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -86,7 +130,7 @@
 
 .content .title {
     font-weight: 500;
-    font-size: .5rem;
+    font-size: .8rem;
     margin: 0;
     padding: 0;
 }
@@ -94,19 +138,19 @@
 .content .subTitle {
     font-weight: bold;
     color: #000;
-    font-size: .4rem;
+    font-size: .6rem;
     margin: 0;
     padding: 0;
 }
 
 .content .overview {
-    font-size: 0.4rem;
+    font-size: 0.6rem;
 }
 
 .content .link {
     display: flex;
     gap: 5px;
-    font-size: 0.4rem;
+    font-size: 0.6rem;
     cursor: pointer;
     color: #000;
     margin: 0;
@@ -123,7 +167,7 @@
     display: flex;
     gap: 5px;
     align-items: center;
-    font-size: 0.4rem;
+    font-size: 0.6rem;
 }
 
 .content .date svg {
@@ -134,7 +178,7 @@
 .content .points,
 .numbered {
     padding-left: 18px;
-    font-size: 0.4rem;
+    font-size: 0.6rem;
     margin: 0;
 }
 

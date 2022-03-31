@@ -7,6 +7,10 @@ import {
       FaEnvelope } from "react-icons/fa";
       
 import styles from "./Resume.module.css";
+import  "./Resume.module.css";
+
+
+
 
 const Resume = forwardRef((props, ref) => {
   const information = props.information;
@@ -313,12 +317,12 @@ const Resume = forwardRef((props, ref) => {
   }, [props.activeFont]);
 
   return (
-    <div ref={ref} className="">
+    <div ref={ref} className={styles.resume}>
       <div ref={containerRef} className={styles.container}>
         <div className={styles.header}>
           <p className={styles.name}>{info.personalInfo?.detail?.name}</p>
           <p className={styles.subHeading}>{info.personalInfo?.detail?.title}</p>
-
+            
           <div className="">
             {info.personalInfo?.detail?.email ? (
               <a href=".." className={styles.link} type="email">

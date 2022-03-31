@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import Logo from '../../Assets/logo.png';
 import './footer.css';
 
 export default class Footer extends Component{
     render() {
         return (
-      <footer id="footer">
+      <footer className="footer bg-indigo">
 
 <div className="footer-newsletter">
   <div className="container">
@@ -15,7 +14,7 @@ export default class Footer extends Component{
         <h4>Join Our Newsletter</h4>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo expedita voluptas culpa sapiente.</p>
         <form action="" method="post">
-          <input type="email" className='rounded' name="email"/><input type="submit" className='rounded-3 bg-primary' value="Subscribe"/>
+          <input type="email" className='rounded' name="email"/><input type="submit" className='rounded-3 btn btn-primary' value="Subscribe"/>
         </form>
       </div>
     </div>
@@ -27,10 +26,9 @@ export default class Footer extends Component{
     <div className="row">
 
       <div className="col-lg-3 col-md-6 footer-contact">
-      <a href="/" className="logo d-flex align-items-center gap-2 mb-2 text-decoration-none">
-          <img src={Logo} alt="" />
-          <h5 className=''>rBuilder</h5>
-      </a>
+      <div className="logo">
+            <span>rBuilder</span>
+        </div>
         <p>
           Akwa Ibom, Uyo 535022<br/>
           Nigeria <br/><br/>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const ResumeTemplate = () => {
   return (
     <div>
         <p className='alert alert-primary'>Coming Soon 😎😎</p>
@@ -8,4 +8,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default ResumeTemplate;
