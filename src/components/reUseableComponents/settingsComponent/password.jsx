@@ -7,18 +7,21 @@ export default function password() {
         <form>
         <div className="">
             <InputControl
+            className='bg-indigo'
               label="Current Password"
               type="password"
             />
             <div className="row mt-2 ">
                <div className="col-lg-6">
                     <InputControl
+                    className='bg-indigo'
                       label="New"
                       type="password"
                     />
                 </div>
                 <div className="col-lg-6">
                     <InputControl
+                    className='bg-indigo'
                     label="Confirm"
                     type="password"
                     />

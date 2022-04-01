@@ -8,6 +8,7 @@ export default function email(props) {
       <form>
         <div className="">
           <InputControl
+          className='bg-indigo'
           label="Email"
           type="email"
         />
@@ -16,11 +17,13 @@ export default function email(props) {
     <div className="row">
       <div className="col-lg-6">
         <InputControl
+        className='bg-indigo'
         label="New"
         />
       </div>
       <div className="col-lg-6">
       <InputControl
+      className='bg-indigo'
         label="Confirm"
         />
       </div>

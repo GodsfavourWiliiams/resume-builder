@@ -9,9 +9,7 @@ export default function WorkSpace() {
           <Navbar/>
             <section className="">
               <div className="container">
-                     <div className="mt-2">
                        <Body/>
-                    </div>
               </div>
             </section>
       

@@ -4,11 +4,11 @@ import ReactToPrint from "react-to-print";
 import Resume from "../ResumeBody/ResumeBody";
 import Modal from '../../components/reUseableComponents/Modal';
 import Loader from "../../components/loader/loader";
-import { FaTimes, FaDownload, FaPrint, FaFileDownload, FaQuestion } from 'react-icons/fa';
+import { FaTimes, FaDownload, FaPrint, FaCloudDownloadAlt, FaQuestion, FaExpand } from 'react-icons/fa';
 import styles from "./Body.module.css";
-import { ReactComponent as Preview } from '../../Assets/edit.svg'
+// import { ReactComponent as Preview } from '../../Assets/edit.svg'
 import { jsPDF } from "jspdf";
-import ReactDOMServer from "react-dom/server";
+// import ReactDOMServer from "react-dom/server";
 import html2canvas from 'html2canvas';
 
 
@@ -31,11 +31,11 @@ function Body() {
 
   const sections = {
     personalInfo: "Personal Info",
+    objective: "Objective",
     workExp: "Work Experience",
     project: "Projects",
     education: "Education",
     achievement: "Achievements",
-    summary: "Summary",
     other: "Other",
   };
   
@@ -51,6 +51,11 @@ function Body() {
       id: sections.personalInfo,
       sectionTitle: sections.personalInfo,
       detail: {},
+    },
+    [sections.objective]: {
+      id: sections.objective,
+      sectionTitle: sections.objective,
+      detail: "",
     },
     [sections.workExp]: {
       id: sections.workExp,
@@ -71,11 +76,6 @@ function Body() {
       id: sections.achievement,
       sectionTitle: sections.achievement,
       points: [],
-    },
-    [sections.summary]: {
-      id: sections.summary,
-      sectionTitle: sections.summary,
-      detail: "",
     },
     [sections.other]: {
       id: sections.other,
@@ -120,15 +120,14 @@ function Body() {
   
   return   isLoading ?
   <Loader/> :
-    <div className="mt-lg-5">
+    <div className="mt-lg-5 mt-3">
      <div className={`social-panel-container ${isPreviewToogle ? 'visible' : ''}`}>
         <div className="social-panel py-2 bg-white p-4 shadow border border-primary rounded">
            
            <div className="d-flex align-items-center justify-content-between">
-                <Preview className="d-lg-none cursor-pointer"  onClick={() => setStatus(true)}/>
-                {/* <FaFileDownload className="cursor-pointer"  onClick={() => setExportModal(true)}/> */}
-                <FaFileDownload className="cursor-pointer"  onClick={() => save()}/>
-                <ReactToPrint
+                <FaExpand className="d-lg-none cursor-pointer"  onClick={() => setStatus(true)}/>
+                <FaCloudDownloadAlt className="cursor-pointer"  onClick={() => save()}/>
+                  <ReactToPrint
                     trigger={() => {
                       return ( <FaPrint className="cursor-pointer"/> )
                     }}
@@ -159,7 +158,7 @@ function Body() {
                         </div>
                     </div>
             </Modal>)}
-     <div className="row ">
+     <div className="row">
       <div className="col-lg-6 ">
             <div className={styles.colors}>
               {colors.map((item) => (
@@ -199,6 +198,7 @@ function Body() {
             information={resumeInformation}
             activeColor={activeColor}
             activeFont={activeFont}
+            
           />
                          
         </div>

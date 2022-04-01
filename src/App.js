@@ -15,8 +15,8 @@ export class App extends Component {
              <Routes>
                 <Route path="/" element={ <LandingPage /> } />
                 <Route path='/template' element={ <Template/> }/>
-                <Route path='/Intro' element={ <Intro/> }/>
-                <Route path='/Workspace' element={ <WorkSpace/> }/>
+                <Route path='/intro' element={ <Intro/> }/>
+                <Route path='/workspace' element={ <WorkSpace/> }/>
                 <Route path="/signIn" element={ <SignIn /> } />
                 <Route path="/signUp" element={ <SignUp /> } />
               </Routes>

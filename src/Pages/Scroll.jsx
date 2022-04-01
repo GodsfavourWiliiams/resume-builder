@@ -23,9 +23,9 @@ const ScrollToTop = () => {
     <Fragment>
       {showButton && (
         <button onClick={scrollToTop} className="back-to-top
-        bg-initial
+        bg-primary
         border-0 
-        p-2
+        px-3
         d-flex 
         align-items-center
         justify-content-center 

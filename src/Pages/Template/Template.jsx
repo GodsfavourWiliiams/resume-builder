@@ -33,7 +33,7 @@ export default class Template extends Component {
                          Presto! Your resume is ready to share!
                       </p>
                       <div className="">
-                          <Link to="/Intro" className=" btn btn-primary text-decoration-none align-items-center">
+                          <Link to="/intro" className=" btn btn-primary text-decoration-none align-items-center">
                               <span className='p-2'>Continue</span>
                               <FaArrowRight/>
                           </Link>

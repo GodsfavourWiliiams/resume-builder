@@ -7,6 +7,7 @@ export default function deleteAccount() {
     <form>
       <div className="">
         <InputControl
+        className='bg-indigo'
           label="Delete"
         />
      </div>

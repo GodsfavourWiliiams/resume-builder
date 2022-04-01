@@ -33,10 +33,29 @@ function Editor(props) {
     setValues(tempValues);
   };
 
+  const [ isChecked, setIsChecked] = useState(false);
+
+  const checkboxToogle = () => {
+    isChecked ? setIsChecked(true) : setIsChecked(false);
+  };
+
+  const objectiveBody = (
+    <div className={styles.detail}>
+      <textarea className="form-input mb-3 bg-indigo"
+      cols="30"
+      rows="10"
+      value={values.objective}
+      onChange={(event) =>
+        setValues((prev) => ({ ...prev, objective: event.target.value }))
+      }
+      />
+    </div>
+  );
   const workExpBody = (
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Job Title"
           value={values.title}
@@ -45,6 +64,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Company Name"
           value={values.companyName}
@@ -55,6 +75,7 @@ function Editor(props) {
       </div>
       <div className={styles.row}>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Certificate Link"
           value={values.certificationLink}
@@ -66,6 +87,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Location"
           value={values.location}
@@ -76,7 +98,7 @@ function Editor(props) {
       </div>
       <div className={styles.row}>
         <InputControl
-        className="bg-indigo"
+          className="bg-indigo"
           label="Start Date"
           type="date"
           value={values.startDate}
@@ -85,7 +107,7 @@ function Editor(props) {
           }
         />
         <InputControl
-        className="bg-indigo"
+          className="bg-indigo"
           label="End Date"
           type="date"
           value={values.endDate}
@@ -93,23 +115,35 @@ function Editor(props) {
             setValues((prev) => ({ ...prev, endDate: event.target.value }))
           }
         />
+        
       </div>
-
+          <div className="form-group">
+                  <input
+                  className="form-check-input me-2"
+                  type="checkbox"
+                  value=""
+                  onClick={checkboxToogle}
+                />
+            <label className="form-check-label" htmlFor="currentCheck"> Currently Working here </label>
+          </div>
       <div className={styles.column}>
-        <label>Enter work description</label>
+        <label className="fw-bold">Enter work description</label>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 3"
           value={values.points ? values.points[2] : ""}
@@ -122,6 +156,7 @@ function Editor(props) {
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Title eg. Dsa traacker"
           value={values.title}
@@ -131,6 +166,7 @@ function Editor(props) {
         />
       </div>
       <InputControl
+      type="text"
       className="bg-indigo"
         label="Overview"
         value={values.overview}
@@ -140,6 +176,7 @@ function Editor(props) {
       />
       <div className={styles.row}>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Deployed Link"
           value={values.link}
@@ -148,6 +185,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Github Link"
           value={values.github}
@@ -159,24 +197,28 @@ function Editor(props) {
       <div className={styles.column}>
         <label>Enter project description</label>
         <InputControl
+        type="text"
         className="bg-indigo"
          label ="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 4"
           value={values.points ? values.points[3] : ""}
@@ -185,10 +227,13 @@ function Editor(props) {
       </div>
     </div>
   );
+
+  
   const educationBody = (
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Title eg. B-tech"
           value={values.title}
@@ -198,6 +243,7 @@ function Editor(props) {
         />
       </div>
       <InputControl
+      type="text"
       className="bg-indigo"
         label="College/School Name"
         value={values.college}
@@ -207,7 +253,7 @@ function Editor(props) {
       />
       <div className={styles.row}>
         <InputControl
-        className="bg-indigo"
+          className="bg-indigo"
           label="Start Date"
           type="date"
           value={values.startDate}
@@ -216,7 +262,7 @@ function Editor(props) {
           }
         />
         <InputControl
-        className="bg-indigo"
+          className="bg-indigo"
           label="End Date"
           type="date"
           value={values.endDate}
@@ -225,12 +271,24 @@ function Editor(props) {
           }
         />
       </div>
+    
+      <div className="form-group">
+                  <input
+                  className="form-check-input me-2"
+                  type="checkbox"
+                  value=""
+                  onClick={checkboxToogle}
+                />
+            <label className="form-check-label" htmlFor="currentCheck"> Currently Schooling here </label>
+          </div>
     </div>
   );
-  const personalInfoZBody = (
+
+  const personalInfoBody = (
     <div className={styles.detail}>
       <div className={styles.row}>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Full Name"
           value={values.name}
@@ -239,6 +297,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Job Title"
           value={values.title}
@@ -249,6 +308,7 @@ function Editor(props) {
       </div>
       <div className={styles.row}>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Linkedin Link"
           value={values.linkedin}
@@ -257,6 +317,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Github Link"
           value={values.github}
@@ -267,6 +328,7 @@ function Editor(props) {
       </div>
       <div className={styles.row}>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Email"
           value={values.email}
@@ -275,6 +337,7 @@ function Editor(props) {
           }
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Enter phone"
           value={values.phone}
@@ -290,24 +353,28 @@ function Editor(props) {
       <div className={styles.column}>
         <label>List your achievements</label>
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 1"
           value={values.points ? values.points[0] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 0)}
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 2"
           value={values.points ? values.points[1] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 1)}
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 3"
           value={values.points ? values.points[2] : ""}
           onChange={(event) => handlePointUpdate(event.target.value, 2)}
         />
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Line 4"
           value={values.points ? values.points[3] : ""}
@@ -316,21 +383,11 @@ function Editor(props) {
       </div>
     </div>
   );
-  const summaryBody = (
-    <div className={styles.detail}>
-      <InputControl
-      className="bg-indigo"
-        label="Ojective/Summary"
-        value={values.summary}
-        onChange={(event) =>
-          setValues((prev) => ({ ...prev, summary: event.target.value }))
-        }
-      />
-    </div>
-  );
+
   const otherBody = (
     <div className={styles.detail}>
       <InputControl
+      type="text"
       className="bg-indigo"
         label="Other"
         value={values.other}
@@ -344,7 +401,9 @@ function Editor(props) {
   const generateBody = () => {
     switch (sections[activeSectionKey]) {
       case sections.personalInfo:
-        return personalInfoZBody;
+        return personalInfoBody;
+      case sections.objective:
+        return objectiveBody;
       case sections.workExp:
         return workExpBody;
       case sections.project:
@@ -353,8 +412,6 @@ function Editor(props) {
         return educationBody;
       case sections.achievement:
         return achievementsBody;
-      case sections.summary:
-        return summaryBody;
       case sections.other:
         return otherBody;
       default:
@@ -363,6 +420,7 @@ function Editor(props) {
   };
  
   const handleSubmission = (e) => {
+    
         switch (sections[activeSectionKey]) {
         case sections.personalInfo: {
           const tempDetail = {
@@ -378,6 +436,19 @@ function Editor(props) {
             ...prev,
             [sections.personalInfo]: {
               ...prev[sections.personalInfo],
+              detail: tempDetail,
+              sectionTitle,
+            },
+          }));
+          break;
+        }
+        case sections.objective: {
+          const tempDetail = values.objective;
+  
+          props.setInformation((prev) => ({
+            ...prev,
+            [sections.objective]: {
+              ...prev[sections.objective],
               detail: tempDetail,
               sectionTitle,
             },
@@ -461,19 +532,6 @@ function Editor(props) {
           }));
           break;
         }
-        case sections.summary: {
-          const tempDetail = values.summary;
-  
-          props.setInformation((prev) => ({
-            ...prev,
-            [sections.summary]: {
-              ...prev[sections.summary],
-              detail: tempDetail,
-              sectionTitle,
-            },
-          }));
-          break;
-        }
         case sections.other: {
           const tempDetail = values.other;
   
@@ -489,6 +547,7 @@ function Editor(props) {
         }
         default:
      }
+
   };
 
   const handleAddNew = () => {
@@ -568,7 +627,7 @@ function Editor(props) {
         : activeInfo?.detail?.github || "",
       phone: activeInfo?.detail?.phone || "",
       email: activeInfo?.detail?.email || "",
-      summary: typeof activeInfo?.detail !== "object" ? activeInfo.detail : "",
+      objective: typeof activeInfo?.detail !== "object" ? activeInfo.detail : "",
       other: typeof activeInfo?.detail !== "object" ? activeInfo.detail : "",
     });
   }, [activeSectionKey]);
@@ -617,6 +676,7 @@ function Editor(props) {
 
       <div className="mt-3">
         <InputControl
+        type="text"
         className="bg-indigo"
           label="Title"
           value={sectionTitle}

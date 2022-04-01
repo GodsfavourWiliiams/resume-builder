@@ -23,11 +23,11 @@ const Resume = forwardRef((props, ref) => {
 
   const info = {
     workExp: information[sections.workExp],
+    objective: information[sections.objective],
     project: information[sections.project],
     achievement: information[sections.achievement],
     education: information[sections.education],
     personalInfo: information[sections.personalInfo],
-    summary: information[sections.summary],
     other: information[sections.other],
   };
 
@@ -39,6 +39,7 @@ const Resume = forwardRef((props, ref) => {
   };
 
   const sectionDiv = {
+    
     [sections.workExp]: (
       <div
         key={"workexp"}
@@ -230,23 +231,7 @@ const Resume = forwardRef((props, ref) => {
         </div>
       </div>
     ),
-    [sections.summary]: (
-      <div
-        key={"summary"}
-        draggable
-        onDragOver={() => seTarget(info.summary?.id)}
-        onDragEnd={() => setSource(info.summary?.id)}
-        className={`${styles.section} ${
-          info.summary?.sectionTitle ? "" : styles.hidden
-        }`}
-      >
-        <div className={styles.sectionTitle}>{info.summary?.sectionTitle}</div>
-        <div className={styles.content}>
-          <p className={styles.overview}>{info.summary?.detail}</p>
-        </div>
-      </div>
-    ),
-    [sections.other]: (
+       [sections.other]: (
       <div
         key={"other"}
         draggable
@@ -293,7 +278,7 @@ const Resume = forwardRef((props, ref) => {
 
   useEffect(() => {
     setColumns([
-      [sections.project, sections.education, sections.summary],
+      [sections.project, sections.education],
       [sections.workExp, sections.achievement, sections.other],
     ]);
   }, []);
@@ -317,8 +302,9 @@ const Resume = forwardRef((props, ref) => {
   }, [props.activeFont]);
 
   return (
-    <div ref={ref} className={styles.resume}>
-      <div ref={containerRef} className={styles.container}>
+    <div className={styles.resume}>
+      <div ref={ref} className={styles.fix}>
+       <div ref={containerRef} className={styles.container}>
         <div className={styles.header}>
           <p className={styles.name}>{info.personalInfo?.detail?.name}</p>
           <p className={styles.subHeading}>{info.personalInfo?.detail?.title}</p>
@@ -355,6 +341,11 @@ const Resume = forwardRef((props, ref) => {
             )}
           </div>
         </div>
+      <div className="px-2">
+        <div className={styles.content}>
+          <p className={styles.overview}>{info.objective?.detail}</p>
+        </div>
+      </div>
 
         <div className="row px-2 cursor-pointer">
           <div className="col-6">
@@ -366,6 +357,7 @@ const Resume = forwardRef((props, ref) => {
         </div>
       </div>
     </div>
+  </div>
   );
 });
 

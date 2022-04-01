@@ -9,11 +9,11 @@ function Loader() {
     <div className="">
         { status && (
             <Modal closeModal={() => setStatus(true)}> 
-                <div class="loader">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
+                <div className="loader">
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
                 </div>
             </Modal>)}
         </div>
