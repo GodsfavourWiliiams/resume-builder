@@ -32,11 +32,11 @@ function Editor(props) {
     tempValues.points[index] = value;
     setValues(tempValues);
   };
+  const [isDisabled, setIsDisabled] = useState(false);
 
-  const [ isChecked, setIsChecked] = useState(false);
-
+  
   const checkboxToogle = () => {
-    isChecked ? setIsChecked(true) : setIsChecked(false);
+    setIsDisabled(!isDisabled)
   };
 
   const objectiveBody = (
@@ -111,6 +111,7 @@ function Editor(props) {
           label="End Date"
           type="date"
           value={values.endDate}
+          disabled={isDisabled}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, endDate: event.target.value }))
           }
@@ -266,6 +267,7 @@ function Editor(props) {
           label="End Date"
           type="date"
           value={values.endDate}
+          disabled={!isDisabled}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, endDate: event.target.value }))
           }
