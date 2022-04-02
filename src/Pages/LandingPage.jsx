@@ -7,7 +7,7 @@ import LearnMore from '../components/LearnMore/learnMore';
 import Footer from '../components/Footer/footer';
 import Faqs from '../components/Faqs/faqs';
 import ScrollToTop from './Scroll'; 
-import { auth } from '../Pages/firebase/firebase.utils'
+import { auth, createUserProfileDocument } from '../Pages/firebase/firebase.utils'
 
 
 class LandingPage extends Component {
@@ -23,11 +23,23 @@ class LandingPage extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
     
-    console.log(user)
-  });
+    if (userAuth) {
+      const userRef = await createUserProfileDocument(userAuth);
+
+      userRef.onSnapshot(snapShot => {
+        this.setState({
+          currentUser:{
+            id: snapShot.id,
+            ...snapShot.data()
+          }
+        });
+        console.log(this.state)
+      });
+      this.setState({ currentUser: userAuth})
+    }
+  }); 
   }
 
   componentWillUnmount() {

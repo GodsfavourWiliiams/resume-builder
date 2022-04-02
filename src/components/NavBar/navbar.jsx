@@ -6,7 +6,8 @@ import Avatar from '../../Assets/avatar-2.jpg';
 import Setting from "../reUseableComponents/tabsComponet";
 import { ReactComponent as LoginLogo } from '../../Assets/Sign_in_squre.svg';
 import { ReactComponent as LogoutLogo } from '../../Assets/Sign_out_squre.svg';
-import { auth } from '../../Pages/firebase/firebase.utils';
+import { auth
+ } from '../../Pages/firebase/firebase.utils';
 
 
 

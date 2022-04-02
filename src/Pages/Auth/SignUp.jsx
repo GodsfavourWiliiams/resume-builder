@@ -2,9 +2,59 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../Assets/CustomLogo.png';
 import InputControl from '../../ResumeComponents/InputControl/InputControl';
-
+import { auth, createUserProfileDocument } from '../firebase/firebase.utils';
 export default class SignUp extends Component {
+  constructor(){
+    super()
+
+    this.state = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirm: ''
+    }
+  }
+
+  
+  handleSubmit = async event => {
+    event.preventDefault();
+
+    const { firstName, lastName, email, password, confirmPassword } = this.state;
+
+    if (password !== confirmPassword) {
+      alert("passwords don't match");
+      return;
+    }
+    try{
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+        );
+
+        await createUserProfileDocument(user, { firstName, lastName })
+
+        this.setState({
+          firstName: '',
+          lastName: '',
+          email: '',
+          password: '',
+          confirm: ''
+        })
+
+    } catch(error) {
+      console.log(error)
+    }
+  }
+
+
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({ [name]: value });
+  };
   render() {
+    const { firstName, lastName,  email, password, confirmPassword } = this.state;
     return(
         <section className="vh-100">
         <div className="container h-100">
@@ -14,24 +64,33 @@ export default class SignUp extends Component {
                     <img alt='logo' src={Logo}/>
                 </Link>
                 <h4 className="text-gray-900 mb-4 d-flex justify-content-center">Create an Account!</h4>
-                <form>
+                <form onSubmit={this.handleSubmit}>;
                               <InputControl
                                  className="bg-indigo"
                                  label="First Name"
                                  placeholder='Blessed'
                                  type="text"
+                                 name="firstName"
+                                 value={firstName}
+                                 onChange={this.handleChange}
                                   />
                               <InputControl
                                  className="bg-indigo"
                                  label="Last Name"
                                  placeholder='Etim'
                                  type="text"
+                                 name="lastName"
+                                 value={lastName}
+                                 onChange={this.handleChange}
                                   />
                               <InputControl
                                  className="bg-indigo"
                                  label="Email"
                                  placeholder='blessedetim@gmail.com'
                                  type="email"
+                                 name="email"
+                                 value={email}
+                                 onChange={this.handleChange}
                                   />
 
                                <InputControl
@@ -39,12 +98,18 @@ export default class SignUp extends Component {
                                  label="Password"
                                  placeholder='Password'
                                  type="password"
+                                 name="password"
+                                 value={password}
+                                 onChange={this.handleChange}
                                />
                                <InputControl
                                  className="bg-indigo"
-                                 label="Email"
-                                 placeholder='Repeat Password'
+                                 label="Confirm Password"
+                                 placeholder='Confirm Password'
                                  type="password"
+                                 name="confirmPassword"
+                                 value={confirmPassword}
+                                 onChange={this.handleChange}
                                 />
 
                             <div className="d-flex justify-content-between mb-4">

@@ -11,8 +11,6 @@ import Error404 from './Pages/404/404';
 // import { signInWithGoogle } from './Pages/firebase/firebase.utils';
 
 class App extends React.Component {
-
- 
     render() {
   return (
           <div>
