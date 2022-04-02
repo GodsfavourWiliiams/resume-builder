@@ -4,11 +4,13 @@ import { FaTimes } from "react-icons/fa";
 import { FiSettings, FiLogOut } from "react-icons/fi";
 import Avatar from '../../Assets/avatar-2.jpg';
 import Setting from "../reUseableComponents/tabsComponet";
-import { ReactComponent as AboutLogo } from '../../Assets/darhboard_alt.svg';
+import { ReactComponent as LoginLogo } from '../../Assets/Sign_in_squre.svg';
+import { ReactComponent as LogoutLogo } from '../../Assets/Sign_out_squre.svg';
+import { auth } from '../../Pages/firebase/firebase.utils';
 
 
 
-const Navbar = (props) => {
+const Navbar = ({ currentUser }) => {
 
   const [isNavScroll, setIsNavScroll] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -39,10 +41,19 @@ const Navbar = (props) => {
       {useLocation().pathname === '/' ?
       
          <nav >
-            <div>
-                <button className="btn btn-primary d-none d-lg-block">About</button>
-                <AboutLogo className="d-lg-none"/>
+           {currentUser ?
+          ( <div  onClick={() => auth.signOut()}>
+                <button className="btn btn-primary d-none d-lg-block">Log Out</button>
+                <LogoutLogo className="d-lg-none"/>
             </div>
+          )
+            :
+           ( <Link to="/signin">
+                <button className="btn btn-primary d-none d-lg-block">Log In</button>
+                <LoginLogo className="d-lg-none"/>
+            </Link>
+           )
+        }
       </nav>
 
       :

@@ -1,7 +1,7 @@
 import HeroImg from '../../Assets/Ikbal 5.png';
 import { Link } from 'react-router-dom';
 
-function Hero() {
+function Hero({ currentUser }) {
 
   return (
     <section className="hero d-flex align-items-center">
@@ -14,9 +14,15 @@ function Hero() {
                             </p>
                          <div>
                              <div className="text-center text-lg-start">
+                                 {currentUser ?
+                                <Link to='/template' className="btn btn-primary d-inline-flex align-items-center justify-content-center align-self-center text-decoration-none px-4 py-2">
+                                    Build My Resume Now
+                                </Link>
+                                :
                                  <Link to="/signIn" className="btn btn-primary d-inline-flex align-items-center justify-content-center align-self-center text-decoration-none px-4 py-2">
                                      Build My Resume Now
                                  </Link>
+                                }
                              </div>
                          </div>
                      </div>

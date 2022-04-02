@@ -6,16 +6,40 @@ import Card from '../components/Features/Features';
 import LearnMore from '../components/LearnMore/learnMore';
 import Footer from '../components/Footer/footer';
 import Faqs from '../components/Faqs/faqs';
-import ScrollToTop from './Scroll';
+import ScrollToTop from './Scroll'; 
+import { auth } from '../Pages/firebase/firebase.utils'
 
 
-export default class LandingPage extends Component {
+class LandingPage extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      currentUser: null
+    };
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+    
+    console.log(user)
+  });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+
   render() {
     return (
          <Fragment>
-            <Navbar/>
+           <Navbar currentUser={this.state.currentUser}/>
             <ScrollToTop/>
-            <HeroContent/>
+            <HeroContent currentUser={this.state.currentUser}/>
             <WhyUs/>
             <Card/>
             <LearnMore/>
@@ -25,3 +49,4 @@ export default class LandingPage extends Component {
     )
   }
 }
+export default LandingPage;

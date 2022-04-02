@@ -1,6 +1,6 @@
 import React from 'react';
 import LandingPage from './Pages/LandingPage';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import SignUp from './Pages/Auth/SignUp';
 import SignIn from './Pages/Auth/SignIn';
@@ -8,29 +8,27 @@ import Template from './Pages/Template/Template';
 import WorkSpace from './Pages/WorkSpace/WorkSpace';
 import Intro from './Pages/Template/intro';
 import Error404 from './Pages/404/404';
-import ProtectedRoute from './Pages/protectedRoute';
+// import { signInWithGoogle } from './Pages/firebase/firebase.utils';
 
+class App extends React.Component {
 
-
-const App = ({isLoggedIn}) => {
+ 
+    render() {
   return (
-          <BrowserRouter>
+          <div>
+            
              <Routes>
-                <Route path="/" element={ <LandingPage /> } />
-
-                <Route element={
-                <ProtectedRoute isLoggedIn={isLoggedIn === false} />}>
+                <Route path="/" element={ <LandingPage/> } />
                   <Route path="/template" element={<Template />} />
                   <Route path="/intro" element={<Intro />} />
                   <Route path="/workspace" element={<WorkSpace />} />
-                </Route>
 
                 <Route path="/signIn" element={ <SignIn /> } />
                 <Route path="/signUp" element={ <SignUp /> } />
                 <Route path="*" element={ <Error404/> } />
               </Routes>
-          </BrowserRouter>
+          </div>
         )
     }
-
+  }
 export default App
