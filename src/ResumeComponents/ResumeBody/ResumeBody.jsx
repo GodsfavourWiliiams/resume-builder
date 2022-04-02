@@ -11,7 +11,6 @@ import  "./Resume.module.css";
 
 
 
-
 const Resume = forwardRef((props, ref) => {
   const information = props.information;
   const sections = props.sections;
@@ -31,12 +30,6 @@ const Resume = forwardRef((props, ref) => {
     other: information[sections.other],
   };
 
-  const getFormattedDate = (value) => {
-    if (!value) return "";
-    const date = new Date(value);
-
-    return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-  };
 
   const sectionDiv = {
     
@@ -75,8 +68,8 @@ const Resume = forwardRef((props, ref) => {
               )}
               {item.startDate && item.endDate ? (
                 <div className={styles.date}>
-                  <FaCalendar /> {getFormattedDate(item.startDate)}-
-                  {getFormattedDate(item.endDate)}
+                  <FaCalendar /> {(item.startDate)}-
+                  {(item.endDate)}
                 </div>
               ) : (
                 <div />
@@ -192,8 +185,8 @@ const Resume = forwardRef((props, ref) => {
               )}
               {item.startDate && item.endDate ? (
                 <div className={styles.date}>
-                  <FaCalendar /> {getFormattedDate(item.startDate)} -
-                  {getFormattedDate(item.endDate)}
+                  <FaCalendar className="me-2" /> {(item.startDate)} -- 
+                  {(item.endDate)}
                 </div>
               ) : (
                 ""

@@ -2,18 +2,15 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { FiSettings, FiLogOut } from "react-icons/fi";
-import "./NavBar.css";
 import Avatar from '../../Assets/avatar-2.jpg';
 import Setting from "../reUseableComponents/tabsComponet";
+import { ReactComponent as AboutLogo } from '../../Assets/darhboard_alt.svg';
 
 
 
-
-
-const Navbar = () => {
+const Navbar = (props) => {
 
   const [isNavScroll, setIsNavScroll] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isSideOpen, setIsSideopen] = useState(false);
 
@@ -27,7 +24,9 @@ const Navbar = () => {
   }
   
   window.addEventListener("scroll", changeNavbarColor);
-      
+
+
+
   return (
   <header className={isNavScroll ? ' bg-white fixed-top py-1 header d-flex align-items-center' : 'header d-flex align-items-center py-3 fixed-top'}>
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -35,27 +34,15 @@ const Navbar = () => {
         <Link to="/" className="logo d-flex align-items-center gap-2 text-decoration-none">
             <span>rBuilder</span>
         </Link>
-        
+       
+
       {useLocation().pathname === '/' ?
       
-         <nav className={`navbars`} >
-            <ul className={`ul  ${isOpen && "show-menu"}`}>
-                <li><span className="nav-link scrollto">About</span></li>
-                <Link to="/signIn" className="text-decoration-none">
-                    <button className="btn btn-primary"> Log In</button>         
-                </Link>
-               
-            </ul>
-          <div className="mobile-nav-toggle menu cross menu--1" >
-            <label style={{width: '50px', height: '40px'}}>
-             <input type="checkbox" onClick={() => setIsOpen(!isOpen)}/>
-            <svg viewBox="0 0 100 100" style={{width: '70px', height: '50px'}}>
-              <path className="line--1" d="M0 35h62c9 0 8 28-4 25L35 40" />
-              <path className="line--2" d="M0 50h70" />
-              <path className="line--3" d="M0 65h62c9 0 8-28-4-25L35 60" />
-            </svg>
-          </label>
-        </div>
+         <nav >
+            <div>
+                <button className="btn btn-primary d-none d-lg-block">About</button>
+                <AboutLogo className="d-lg-none"/>
+            </div>
       </nav>
 
       :

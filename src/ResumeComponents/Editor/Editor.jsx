@@ -100,16 +100,19 @@ function Editor(props) {
         <InputControl
           className="bg-indigo"
           label="Start Date"
-          type="date"
+          placeholder="March 2018"
+          type="text"
           value={values.startDate}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, startDate: event.target.value }))
           }
         />
         <InputControl
-          className="bg-indigo"
+
+          className={`${isDisabled ? 'border-danger' : 'bg-indigo'}`}
           label="End Date"
-          type="date"
+          placeholder="June 2021"
+          type="text"
           value={values.endDate}
           disabled={isDisabled}
           onChange={(event) =>
@@ -256,16 +259,18 @@ function Editor(props) {
         <InputControl
           className="bg-indigo"
           label="Start Date"
-          type="date"
+          placeholder="Jan 2017"
+          type="text"
           value={values.startDate}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, startDate: event.target.value }))
           }
         />
         <InputControl
-          className="bg-indigo"
+          className={`${isDisabled ? 'border-danger' : 'bg-indigo'}`}
           label="End Date"
-          type="date"
+          placeholder="Dec 2021"
+          type="text"
           value={values.endDate}
           disabled={!isDisabled}
           onChange={(event) =>

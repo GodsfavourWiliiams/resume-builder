@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/NavBar/navbar';
 import TemplateImg from '../../Assets/Ikbal2.png';
-import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import Footer from '../../components/Footer/footer';
+import { Link } from 'react-router-dom';
 
 
-export default class Template extends Component {
- 
-  render() {
-    return (
+const Template = ({ user }) => {
+return (
  <div className="">
    <Navbar/>
     <section className="about">
@@ -52,4 +50,5 @@ export default class Template extends Component {
   </div>
     )
   }
-}
+
+  export default Template;

@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 import Logo  from '../../Assets/CustomLogo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import InputControl from '../../ResumeComponents/InputControl/InputControl';
 
-export default class SignIn extends Component {
-    constructor(props){
-        super();
-    
-        this.state = {
-            isLogIn: true,
-            value: ''
-        }
-    
-        this.handleAuth = this.handleAuth.bind(this)
-      }
 
-      handleAuth = (e) => {
-        //   e.preventDefault()
-          this.setState(prevState =>({
-              isLogIn: !prevState.isLogIn
-          }))
-    }
 
-  render() {
+const SignIn = () => {
+    const [isLoggedIn, setisLoggedIn] = useState(false);
+    const navigate = useNavigate();
+        const handleLoggedIn = () => {
+        setisLoggedIn(true);
+        navigate("/template");
+        };
+        const handleLoggedOut = () => {
+        setisLoggedIn(false);
+        };
     return (
         <section className="vh-100">
         <div className="container h-100">
@@ -32,7 +24,7 @@ export default class SignIn extends Component {
                     <img alt='logo' src={Logo}/>
                 </Link>
                 <h4 className="text-gray-900 mb-4 d-flex justify-content-center">Welcome Back!!</h4>
-                <form>
+                <form onChange={() => setisLoggedIn(true)}>
                             <InputControl
                             className="bg-indigo"
                                 label="Email"
@@ -58,13 +50,19 @@ export default class SignIn extends Component {
                          </div>
                     </div>
 
-                    <Link to='/' className="d-flex justify-content-">
+                    <Link to='/' className="">
                     <span>Forgot password?</span>
                     </Link>  
                 </div>
 
                 {/* <!-- Submit button --> */}
-                <Link to='/template' className="btn text-decoration-none btn-primary w-100 mb-4">Sign in</Link>
+                {/* <Link to='/template' className=""> */}
+                  {isLoggedIn ? (
+                <button className="btn text-decoration-none btn-primary w-100 mb-4" onClick={handleLoggedOut}>Sign Out</button>
+                ) : (
+                  <button className="btn text-decoration-none btn-primary w-100 mb-4" onClick={handleLoggedIn}>Sign In</button>
+                )} 
+                {/* </Link> */}
             <div>
                      <div aria-label="Continue with google" className="my-3 w-100 border rounded-md border d-flex align-items-center justify-content-center">
                         <svg width={19} height={20} viewBox="0 0 19 20" fill="none">
@@ -96,4 +94,5 @@ export default class SignIn extends Component {
       </section>
     )
   }
-}
+
+  export default SignIn ;

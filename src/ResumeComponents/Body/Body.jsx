@@ -4,11 +4,12 @@ import ReactToPrint from "react-to-print";
 import Resume from "../ResumeBody/ResumeBody";
 import Modal from '../../components/reUseableComponents/Modal';
 import Loader from "../../components/loader/loader";
-import { FaTimes, FaDownload, FaPrint, FaCloudDownloadAlt, FaQuestion, FaExpand } from 'react-icons/fa';
+import { FaTimes, FaDownload, FaQuestion } from 'react-icons/fa';
 import styles from "./Body.module.css";
-// import { ReactComponent as Preview } from '../../Assets/edit.svg'
+import { ReactComponent as Import } from '../../Assets/Import.svg';
+import { ReactComponent as Printduotone } from '../../Assets/Print_duotone.svg';
+import { ReactComponent as ExpandFull } from '../../Assets/Full_alt.svg';
 import { jsPDF } from "jspdf";
-// import ReactDOMServer from "react-dom/server";
 import html2canvas from 'html2canvas';
 
 
@@ -125,11 +126,11 @@ function Body() {
         <div className="social-panel py-2 bg-white p-4 shadow border border-primary rounded">
            
            <div className="d-flex align-items-center justify-content-between">
-                <FaExpand className="d-lg-none cursor-pointer"  onClick={() => setStatus(true)}/>
-                <FaCloudDownloadAlt className="cursor-pointer"  onClick={() => save()}/>
+                <ExpandFull className="d-lg-none cursor-pointer"  onClick={() => setStatus(true)}/>
+                <Import className="cursor-pointer"  onClick={() => save()}/>
                   <ReactToPrint
                     trigger={() => {
-                      return ( <FaPrint className="cursor-pointer"/> )
+                      return ( <Printduotone className="cursor-pointer"/> )
                     }}
                     content={() => resumeRef.current}
                   /> 
