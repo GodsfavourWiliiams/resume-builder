@@ -10,7 +10,7 @@ function Hero({ currentUser }) {
                  <div className="row">
                      <div className="col-lg-6 d-flex flex-column justify-content-center">
                          <h1 >BUILD A RESUME THAT WILL GET YOU HIRED</h1>
-                         <p className='mt-3'>Our online resume builder generates resume templates with thousands of perfectly written bullet points for you to choose from, covering all industries. Just point and click the relevant job description bullet points. No registration required! No matter who you are, our Resume Builder will automatically format them onto your favorite resume templates.
+                         <p className='mt-3'>Our online resume builder generates resume templates with thousands of perfectly written bullet points for you to choose from, covering all industries. Just point and click the relevant job description bullet points. No payment required for default template! No matter who you are, our Resume Builder will automatically format them onto your favorite resume templates.
                             </p>
                          <div>
                              <div className="text-center text-lg-start">

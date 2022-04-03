@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
-import { FiSettings, FiLogOut } from "react-icons/fi";
-import Avatar from '../../Assets/avatar-2.jpg';
-import Setting from "../reUseableComponents/tabsComponet";
+import Setting from '../reUseableComponents/tabsComponet';
 import { ReactComponent as LoginLogo } from '../../Assets/Sign_in_squre.svg';
 import { ReactComponent as LogoutLogo } from '../../Assets/Sign_out_squre.svg';
-import { auth
- } from '../../Pages/firebase/firebase.utils';
+import { ReactComponent as SettingsLogo } from '../../Assets/Setting_line.svg';
+import { ReactComponent as Profile } from '../../Assets/User_circle.svg';
+import { auth } from '../../Pages/firebase/firebase.utils';
 
 
 
@@ -39,44 +38,33 @@ const Navbar = ({ currentUser }) => {
         </Link>
        
 
-      {useLocation().pathname === '/' ?
-      
-         <nav >
-           {currentUser ?
-          ( <div  onClick={() => auth.signOut()}>
-                <button className="btn btn-primary d-none d-lg-block">Log Out</button>
-                <LogoutLogo className="d-lg-none"/>
-            </div>
-          )
-            :
-           ( <Link to="/signin">
-                <button className="btn btn-primary d-none d-lg-block">Log In</button>
-                <LoginLogo className="d-lg-none"/>
-            </Link>
-           )
-        }
-      </nav>
-
-      :
-
-    <div className="d-flex">                
-      <div onClick={() => setIsProfileOpen(!isProfileOpen)}>
-          <span className="mr-2 d-none d-lg-inline text-gray-600 small">Blessing Asuk </span>
-          <img className="img-profile rounded-circle" alt="profile" src={Avatar}/>
+    <div className="">                
+      <div className="" onClick={() => setIsProfileOpen(!isProfileOpen)}>
+        <span className="mr-2 d-none d-lg-inline text-white small">Display Name</span>
+          <Profile className="img-profile"/>
       </div>
       
       <ul className={`profile ${isProfileOpen && "show-profile shadow-sm bg-white rounded animated--grow-in"}`}>
-          <li className="dropdown-item py-2" onClick={ToggleSidebar}>
-              <FiSettings className="mr-2"/> Settings
-          </li>
-          <Link to="/SignIn" className="dropdown-item py-2">
-              <FiLogOut className="mr-2"/> Logout
-          </Link>
+        {useLocation().pathname === '/' ?
+          ""
+         :
+         <li className="dropdown-item py-2" onClick={ToggleSidebar}>
+         <SettingsLogo className="mr-2"/> Settings
+         </li>
+        } 
          
+          {currentUser ?
+          <div className="dropdown-item py-2"  onClick={() => auth.signOut()}>
+              <LogoutLogo className="mr-2"/> Logout
+          </div>
+         :
+            <Link to="/signin" className="dropdown-item py-2" >
+                <LoginLogo className="mr-2"/> Login
+            </Link>
+          }
         </ul>
   </div>
 
-      }
       
      
            <div className={`sidebar ${isSideOpen === true ? 'active' : ''}`}>

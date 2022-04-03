@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Logo  from '../../Assets/CustomLogo.png';
 import { Link } from 'react-router-dom';
 import InputControl from '../../ResumeComponents/InputControl/InputControl';
-import { signInWithGoogle } from '../firebase/firebase.utils';
+import { auth, signInWithGoogle } from '../firebase/firebase.utils';
 
 
 export default class SignIn extends Component {
@@ -16,21 +16,24 @@ export default class SignIn extends Component {
 
 
     }
-
-    handleSubmit = (event) => {
+    handleSubmit = async event => {
         event.preventDefault();
-
-        this.setState({
-            email: '',
-            password: ''
-        })
-
-    }
-
-    handleChange = (event) => {
+    
+        const { email, password } = this.state;
+    
+        try {
+          await auth.signInWithEmailAndPassword(email, password);
+          this.setState({ email: '', password: '' });
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+      handleChange = event => {
         const { value, name } = event.target;
-        this.setState({ [ name ]: value });
-    }
+    
+        this.setState({ [name]: value });
+      };
   render() {
     return (
         <section className="vh-100">
@@ -43,19 +46,25 @@ export default class SignIn extends Component {
                 <h4 className="text-gray-900 mb-4 d-flex justify-content-center">Welcome Back!!</h4>
                 <form  onClick={this.handleSubmit}>
                             <InputControl
-                            className="bg-indigo"
+                                className="bg-indigo"
                                 label="Email"
+                                type="email"
+                                name="email"
                                 placeholder='blessedetim@gmail.com'
                                 value={this.state.email}
                                 onChange={this.handleChange}
+                                required
                             />
 
                             <InputControl
                             className="bg-indigo"
                                 label="Password"
+                                name="password"
+                                type="password"
                                 placeholder='Password'
                                 value={this.state.password}
                                 onChange={this.handleChange}
+                                required
                             />
 
                    {/* <!-- 2 column grid layout --> */}
@@ -65,7 +74,7 @@ export default class SignIn extends Component {
                                   <input
                                   className="form-check-input"
                                   type="checkbox"
-                                  value=""
+                                  name='checkbox'
                                 />
                             <label className="form-check-label" htmlFor="loginCheck"> Remember me </label>
                          </div>
