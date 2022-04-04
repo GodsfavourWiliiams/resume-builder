@@ -1,13 +1,8 @@
 import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 
-const ProtectedRoute = ({isLoggedIn, redirectPath = '/signin',  children,}) => {
-  if (!isLoggedIn) {
-    return <Navigate to={redirectPath} replace />;
-  }
-
-   return children ? children : <Outlet />;
+const ProtectedRoute = ({ currentUser, children }) => {
+  return !currentUser ? <Navigate to='/signin' replace /> : children
 };
-
 export default ProtectedRoute;

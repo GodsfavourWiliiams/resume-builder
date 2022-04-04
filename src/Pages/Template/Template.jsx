@@ -1,12 +1,41 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/NavBar/navbar';
 import TemplateImg from '../../Assets/Ikbal2.png';
 import { FaArrowRight } from 'react-icons/fa';
 import Footer from '../../components/Footer/footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db } from "../../firebase";
+import { query, collection, getDocs, where } from "firebase/firestore";
 
 
-const Template = ({ user }) => {
+const Template = () => {
+  const [user, loading] = useAuthState(auth);
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
+
+  const fetchUserName = async () => {
+    try {
+      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const doc = await getDocs(q);
+      const data = doc.docs[0].data();
+
+      setName(data.name);
+    } catch (err) {
+      console.error(err);
+      alert("An error occured while fetching user data");
+    }
+  };
+
+  useEffect(() => {
+    if (loading) return;
+    if (!user) return navigate("/login");
+
+    fetchUserName();
+  });
+
+
+
 return (
  <div className="">
    <Navbar/>
@@ -15,6 +44,7 @@ return (
           <div className="row gx-0">
               <div className="col-lg-6 d-flex flex-column justify-content-center" >
                   <div className="content">
+                    <p className="mb-3 mt-0 fw-bold">Hello {name}</p>
                       <h3>Let's get started</h3>
                       <h2>Enter Your Information</h2>
                       <p>

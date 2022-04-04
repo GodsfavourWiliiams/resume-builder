@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import Setting from '../reUseableComponents/tabsComponet';
@@ -6,11 +6,36 @@ import { ReactComponent as LoginLogo } from '../../Assets/Sign_in_squre.svg';
 import { ReactComponent as LogoutLogo } from '../../Assets/Sign_out_squre.svg';
 import { ReactComponent as SettingsLogo } from '../../Assets/Setting_line.svg';
 import { ReactComponent as Profile } from '../../Assets/User_circle.svg';
-import { auth } from '../../Pages/firebase/firebase.utils';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db, logout } from "../../firebase";
+import { query, collection, getDocs, where } from "firebase/firestore";
 
 
 
-const Navbar = ({ currentUser }) => {
+const Navbar = () => {
+
+  const [user, loading] = useAuthState(auth);
+  const [name, setName] = useState("");
+
+  const fetchUserName = async () => {
+    try {
+      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const doc = await getDocs(q);
+      const data = doc.docs[0].data();
+
+      setName(data.name);
+    } catch (err) {
+      console.error(err);
+      // alert("An error occured while fetching user data");
+    }
+  };
+
+  useEffect(() => {
+    if (loading) return;
+
+    fetchUserName();
+  });
+
 
   const [isNavScroll, setIsNavScroll] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -40,7 +65,7 @@ const Navbar = ({ currentUser }) => {
 
     <div className="">                
       <div className="" onClick={() => setIsProfileOpen(!isProfileOpen)}>
-        <span className="mr-2 d-none d-lg-inline text-white small">Display Name</span>
+        <span className="mr-2 d-none d-lg-inline small">{name}</span>
           <Profile className="img-profile"/>
       </div>
       
@@ -53,12 +78,12 @@ const Navbar = ({ currentUser }) => {
          </li>
         } 
          
-          {currentUser ?
-          <div className="dropdown-item py-2"  onClick={() => auth.signOut()}>
+          {user ?
+          <div className="dropdown-item py-2"  onClick={logout}>
               <LogoutLogo className="mr-2"/> Logout
           </div>
          :
-            <Link to="/signin" className="dropdown-item py-2" >
+            <Link to="/login" className="dropdown-item py-2" >
                 <LoginLogo className="mr-2"/> Login
             </Link>
           }

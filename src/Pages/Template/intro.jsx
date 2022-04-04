@@ -1,12 +1,23 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import IntroCreate from '../../Assets/Saly-26.svg';
 import IntroFolder from '../../Assets/ImportFolder.svg';
 import Welcome from '../../Assets/Marni 5.png';
 import  { Link } from 'react-router-dom';
 import Navbar from '../../components/NavBar/navbar';
+import { useNavigate } from 'react-router-dom';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
 
-class Intro extends Component{
-    render() {
+const Intro = () => {
+  const [user, loading ] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loading) return;
+    if (!user) return navigate("/login");
+
+  });
+
         return( 
         <>
         <Navbar/>
@@ -46,6 +57,5 @@ class Intro extends Component{
         </>
         );
     }
-}
 
 export default Intro; 
