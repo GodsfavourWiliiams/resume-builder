@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import LandingPage from './Pages/LandingPage';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -9,12 +9,20 @@ import WorkSpace from './Pages/WorkSpace/WorkSpace';
 import Intro from './Pages/Template/intro';
 import Error404 from './Pages/404/404';
 import Reset from './Reset';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
-class App extends Component {
-  
-    render() {
+
+const App = () => {
+
+  toast.configure({
+    autoClose: 3000,
+    draggable: false,
+});
+
   return (
           <div>
+            <ToastContainer/>
               <Routes>
                 <Route path="/" element={ <LandingPage/> } />
                     <Route path="/template" element={<Template />} />
@@ -28,5 +36,5 @@ class App extends Component {
           </div>
         )
     }
-  }
+  
 export default App

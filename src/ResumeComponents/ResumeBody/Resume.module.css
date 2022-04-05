@@ -159,6 +159,7 @@
     
     .content .overview {
         font-size: 0.8rem;
+        word-wrap: break-word;
     }
     
     .content .link {

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import {
   auth,
   registerWithEmailAndPassword,
   signInWithGoogle,
 } from "./firebase";
 import Logo  from './Assets/CustomLogo.png';
+import { toast } from 'react-toastify';
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -15,8 +17,19 @@ function Register() {
   const [user, loading,] = useAuthState(auth);
   const navigate = useNavigate();
 
-  const register = () => {
-    if (!name) alert("Please enter name");
+  const register = (e) => {
+    if (!name) toast.error("Please enter your name");
+
+    let pattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+
+    if (!pattern.test(email)) {
+      const errors = 'Email addresses need an @ and a .com'
+      toast.error(`${errors}`);
+    }
+
+    if (!email) toast.error("Please enter your email address");
+    
+    if (!password ) toast.error("Please enter your preffered password");
     registerWithEmailAndPassword(name, email, password);
   };
 
@@ -25,6 +38,10 @@ function Register() {
     if (user) navigate("/template");
   });
 
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
   return (
    
      <section className="vh-100">
@@ -39,12 +56,13 @@ function Register() {
                    <div className="form-group">
                       <label htmlFor="name" className="form-label">Full Name</label>
                       <input
-                          type="text"
+                           type="text"
                           className="bg-indigo form-input"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="Full Name"
                         />
+                        
                       </div>
                     <div className="form-group">
                       <label htmlFor="email" className="form-label">Email</label>
@@ -59,12 +77,21 @@ function Register() {
                       <div className="form-group">
                           <label htmlFor="password" className="form-label">Password</label>
                             <input
-                              type="password"
+                              type={passwordShown ? "text" : "password"}
                               className="bg-indigo form-input"
                               value={password}
                               onChange={(e) => setPassword(e.target.value)}
                               placeholder="Password"
                             />
+                            <div className="position-relative passwordToggleOut "
+                            onClick={togglePasswordVisiblity}>
+                            {passwordShown ?
+                            <FaEye/>
+                              :
+                              <FaEyeSlash/>
+                              }
+                           </div>
+                           
                           </div>    
                          <div className="d-flex justify-content-between mb-4">
                               <div className="form-check mb-3 mb-md-0">

@@ -3,17 +3,24 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Logo  from './Assets/CustomLogo.png';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
+
 
   useEffect(() => {
     if (user) navigate("/template");
   });
+  
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
 
   return (
     <section className="vh-100">
@@ -25,7 +32,7 @@ function Login() {
             </Link>
             <h4 className="text-gray-900 mb-4 d-flex justify-content-center">Welcome Back!!</h4>
 
-            {error && <p className="alert alert-danger">{error}</p>}
+            {/* <p className="alert alert-danger">{error.message} huh!!</p> */}
             <div >
                     <div className="form-group">
                       <label htmlFor="email" className="form-label">Email</label>
@@ -40,13 +47,21 @@ function Login() {
                       <div className="form-group">
                       <label htmlFor="email" className="form-label">Password</label>
                         <input
-                          type="password"
+                          type={passwordShown ? "text" : "password"}
                           className="bg-indigo form-input"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           placeholder="Password"
                         />
                       </div>
+                      <div className="position-relative passwordToggle"
+                            onClick={togglePasswordVisiblity}>
+                            {passwordShown ?
+                            <FaEye/>
+                          :
+                          <FaEyeSlash/>
+                           }
+                           </div>
                {/* <!-- 2 column grid layout --> */}
                     <div className="d-flex justify-content-between mb-4">
                         <div className="d-flex ">

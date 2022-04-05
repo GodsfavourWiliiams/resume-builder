@@ -25,8 +25,7 @@ const Navbar = () => {
 
       setName(data.name);
     } catch (err) {
-      console.error(err);
-      // alert("An error occured while fetching user data");
+      // 
     }
   };
 
@@ -68,7 +67,15 @@ const Navbar = () => {
         <span className="mr-2 d-none d-lg-inline small">{name}</span>
           <Profile className="img-profile"/>
       </div>
-      
+      <div class="dropdown">
+            <Profile />
+            <div class="dropdown-content">
+                <a href="#home">Home</a>
+                <a href="#skills">My skills</a>
+                <a href="#project">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
       <ul className={`profile ${isProfileOpen && "show-profile shadow-sm bg-white rounded animated--grow-in"}`}>
         {useLocation().pathname === '/' ?
           ""
@@ -87,6 +94,7 @@ const Navbar = () => {
                 <LoginLogo className="mr-2"/> Login
             </Link>
           }
+         
         </ul>
   </div>
 

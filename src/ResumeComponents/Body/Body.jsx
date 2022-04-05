@@ -13,7 +13,6 @@ import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
 
 
-
 function Body() {
   const colors = [
     "#f44336","#E91E63","#9C27B0","#673AB7",

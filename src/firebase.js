@@ -16,6 +16,7 @@ import {
     where,
     addDoc,
 } from "firebase/firestore";
+import { toast } from 'react-toastify';
 
 const firebaseConfig = {
     apiKey: "AIzaSyC7MIm2v7O8YB9DtQ9DVSffOFKyfFKP3-g",
@@ -48,18 +49,28 @@ const signInWithGoogle = async() => {
             });
         }
     } catch (err) {
-        console.error(err);
-        alert(err.message);
+        if (err) {
+          toast.error("Huh!!.. " + err.message);
+        } else {
+          toast.success('Successfully');
+        }
     }
 };
 
+
 const logInWithEmailAndPassword = async(email, password) => {
+ 
     try {
         await signInWithEmailAndPassword(auth, email, password);
     } catch (err) {
         console.error(err);
-        alert(err.message);
+        if (err) {
+          toast.error("Huh!!.. " + err.message);
+        } else {
+          toast.success('Successfully');
+        }
     }
+   
 };
 
 const registerWithEmailAndPassword = async(name, email, password) => {
@@ -73,18 +84,24 @@ const registerWithEmailAndPassword = async(name, email, password) => {
             email,
         });
     } catch (err) {
-        console.error(err);
-        alert(err.message);
+      if (err) {
+        toast.error("Huh!!.. " + err.message);
+      } else {
+        toast.success('Successfully');
+      }
     }
 };
 
 const sendPasswordReset = async(email) => {
     try {
         await sendPasswordResetEmail(auth, email);
-        alert("Password reset link sent!");
+          toast.success("Password reset link sent!");
     } catch (err) {
-        console.error(err);
-        alert(err.message);
+      if (err) {
+        toast.error("Huh!!.. " + err.message);
+      } else {
+        toast.success('Successfully');
+      }
     }
 };
 

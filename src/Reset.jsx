@@ -3,7 +3,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { auth, sendPasswordReset } from "./firebase";
-import "./Reset.css";
 import Logo  from './Assets/CustomLogo.png';
 
 function Reset() {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import InputControl from "../InputControl/InputControl";
 import styles from "./Editor.module.css";
+import { toast } from 'react-toastify';
 
 function Editor(props) {
   const sections = props.sections;
@@ -427,7 +428,7 @@ function Editor(props) {
   };
  
   const handleSubmission = (e) => {
-    
+    if(values) toast.success("Added")
         switch (sections[activeSectionKey]) {
         case sections.personalInfo: {
           const tempDetail = {
