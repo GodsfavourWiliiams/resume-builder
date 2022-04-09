@@ -16,11 +16,15 @@
 }
 
 .faqs {
-    max-width: 550px;
+    max-width: 600px;
     width: 100%;
 }
 
 .faqs-title {
     font-size: 18px;
     font-weight: 700;
+}
+
+.rotates {
+    transform: rotate(180);
 }

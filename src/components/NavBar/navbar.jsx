@@ -7,7 +7,7 @@ import { ReactComponent as LogoutLogo } from '../../Assets/Sign_out_squre.svg';
 import { ReactComponent as SettingsLogo } from '../../Assets/Setting_line.svg';
 import { ReactComponent as Profile } from '../../Assets/User_circle.svg';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db, logout } from "../../firebase";
+import { auth, db, logout } from "../../Pages/firebase/firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 
 
@@ -63,19 +63,10 @@ const Navbar = () => {
        
 
     <div className="">                
-      <div className="" onClick={() => setIsProfileOpen(!isProfileOpen)}>
+    <div className="" onClick={() => setIsProfileOpen(!isProfileOpen)}>
         <span className="mr-2 d-none d-lg-inline small">{name}</span>
           <Profile className="img-profile"/>
       </div>
-      <div class="dropdown">
-            <Profile />
-            <div class="dropdown-content">
-                <a href="#home">Home</a>
-                <a href="#skills">My skills</a>
-                <a href="#project">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
       <ul className={`profile ${isProfileOpen && "show-profile shadow-sm bg-white rounded animated--grow-in"}`}>
         {useLocation().pathname === '/' ?
           ""

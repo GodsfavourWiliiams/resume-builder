@@ -5,7 +5,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import Footer from '../../components/Footer/footer';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db } from "../../firebase";
+import { auth, db } from "../firebase/firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 
 
@@ -42,7 +42,7 @@ return (
       <div className="container" >
           <div className="row gx-0">
               <div className="col-lg-6 d-flex flex-column justify-content-center" >
-                  <div className="content">
+                  <div className="content mt-4">
                     <p className="mb-3 mt-0 fw-bold">Hello {name}</p>
                       <h3>Let's get started</h3>
                       <h2>Enter Your Information</h2>

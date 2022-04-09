@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ImageOne from '../../Assets/Saly-1.png';
 import ImageTwo from '../../Assets/Saly-31.png';
-import ImageThree from '../../Assets/Other 09.svg';
+import ImageThree from '../../Assets/Other 09.png';
 
 
 

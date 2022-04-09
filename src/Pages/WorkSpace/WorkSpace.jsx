@@ -3,7 +3,7 @@ import Navbar from '../../components/NavBar/navbar';
 import Body from '../../ResumeComponents/Body/Body';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase";
+import { auth } from "../firebase/firebase";
 
 export default function WorkSpace() {
   const [user, loading ] = useAuthState(auth);
@@ -12,17 +12,16 @@ export default function WorkSpace() {
   useEffect(() => {
     if (loading) return;
     if (!user) return navigate("/login");
-
   });
+
     return (
       <div className='overflow-hidden'>
           <Navbar/>
             <section className="">
               <div className="container">
-                       <Body/>
+                <Body/>
               </div>
             </section>
-      
        </div>
     )
 }

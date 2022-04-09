@@ -9,8 +9,7 @@ import styles from "./Body.module.css";
 import { ReactComponent as Import } from '../../Assets/Import.svg';
 import { ReactComponent as Printduotone } from '../../Assets/Print_duotone.svg';
 import { ReactComponent as ExpandFull } from '../../Assets/Full_alt.svg';
-import { jsPDF } from "jspdf";
-import html2canvas from 'html2canvas';
+import { toast } from 'react-toastify';
 
 
 function Body() {
@@ -102,21 +101,6 @@ function Body() {
    }, []);
    
    
-   const save = async () => {
-    const element = resumeRef.current;
-    const canvas = await html2canvas(element);
-    const data = canvas.toDataURL('image/png');
-
-    const pdf = new jsPDF();
-    const imgProperties = pdf.getImageProperties(data);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight =
-      (imgProperties.height * pdfWidth) / imgProperties.width;
-
-    pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('print.pdf');
-  };
-
   
   return   isLoading ?
   <Loader/> :
@@ -126,7 +110,7 @@ function Body() {
            
            <div className="d-flex align-items-center justify-content-between">
                 <ExpandFull className="d-lg-none cursor-pointer"  onClick={() => setStatus(true)}/>
-                <Import className="cursor-pointer"  onClick={() => save()}/>
+                <Import className="cursor-pointer"  onClick={() => setExportModal(true)}/>
                   <ReactToPrint
                     trigger={() => {
                       return ( <Printduotone className="cursor-pointer"/> )
@@ -145,15 +129,20 @@ function Body() {
                  <Modal modalBackground="bg-white"  onClick={() => setExportModal(false)}> 
                      <div className="p-4 bg-white rounded w-100">
                         <h5 className="fw-bold">Download Your Resume</h5>
-                            <p className="my-3 text-secondary">
-                              This export method makes use of HTML canvas to convert the resume to an image and print it on a PDF, which means it will lose all selecting/parsing capabilities.</p>
-                              <p className="my-3 text-secondary">If that is important to you, please try printing the resume instead, using the print button below. The result may vary as the output is browser dependent, but it is known to work best on the latest version of Google Chrome.</p>
+                            <p className="my-3 text-secondary alert alert-warning">
+                              This export method is currently unavailable.</p>
+                              <p className="my-3 text-secondary">If that is important to you, please try printing the resume instead, using the print button below. The result may vary as the output is browser dependent, but it is known to work best on the latest version of Google Chrome.
+                              </p>
+                              <p className="my-3 text-secondary alert alert-warning">
+                              Please note this is a test version .
+                              </p>
                             <div className="d-flex justify-content-between align-items-center">
-                              <button className="btn flex justify-content-center align-items-center mt-6 border border-danger text-danger py-2 px-3 rounded"  onClick={() => setExportModal(false)}>
-                                <FaTimes className=""/><span>Cancel</span>
+                              <button className="btn flex mt-6 border border-danger text-danger py-2 px-3 rounded"  
+                              onClick={() => setExportModal(false)}>
+                                <FaTimes className="mb-1 me-1"/><span className="">Cancel</span>
                                 </button>
-                                 <button className="btn flex justify-content-center align-items-center btn mt-6 border border-primary text-primary fw-medium py-2 px-3 rounded" onClick={save}>
-                                      <FaDownload className="me-2"/><span className="">Save as PDF</span>
+                                 <button className="btn flex justify-content-center align-items-center btn mt-6 border border-primary text-primary fw-medium py-2 px-3 rounded" >
+                                      <FaDownload className="me-2 mb-1"/><span className="">Save as PDF</span>
                                   </button>
                         </div>
                     </div>
@@ -168,14 +157,23 @@ function Body() {
                   className={`${styles.color} ${
                     activeColor === item ? styles.active : ""
                   }`}
-                  onClick={() => setActiveColor(item)}
+                  onClick=
+                  {() => {
+                    setActiveColor(item);
+                     toast(item + " has been added")
+                  }}
                 />
               ))}
             </div>
             <div className="mb-3 d-flex flex-wrap ">
                   {fonts.map((font) => (
                     <span key={font} className={`rounded-pill border cursor-pointer m-1 ${activeFont === font ? "badge bg-primary text-white " : "badge bg-white text-secondary "} `}  
-                    onClick={() => setActiveFont(font)}>
+                    onClick=
+                      {() => {
+                       setActiveFont(font);
+                       toast(font + " has been added")
+                      }}
+                      >
                       {font}
                     </span>
                   ))

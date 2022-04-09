@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import HeroImg from '../../Assets/Ikbal 5.png';
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../firebase';
+import { auth } from '../../Pages/firebase/firebase';
 
 const Hero = () => {
     const [user, loading] = useAuthState(auth);

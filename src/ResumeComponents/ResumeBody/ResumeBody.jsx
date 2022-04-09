@@ -8,7 +8,7 @@ import {
       
 import styles from "./Resume.module.css";
 import  "./Resume.module.css";
-import { toast } from 'react-toastify';
+
 
 
 
@@ -282,7 +282,7 @@ const Resume = forwardRef((props, ref) => {
 
   useEffect(() => {
     const container = containerRef.current;
-    toast(props.activeColor + " Has been added")
+   
     if (!props.activeColor || !container) return;
 
     container.style.setProperty("--color", props.activeColor);
@@ -290,7 +290,7 @@ const Resume = forwardRef((props, ref) => {
 
   useEffect(() => {
     const container = containerRef.current;
-    toast(props.activeFont + " Has been added")
+  
     if (!props.activeFont || !container) return;
 
     container.style.setProperty("--Font", props.activeFont);

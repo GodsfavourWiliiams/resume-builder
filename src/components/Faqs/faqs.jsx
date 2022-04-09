@@ -54,12 +54,12 @@ function Accordion() {
                         <h4 className="faqs-title py-2" >
                         {item.question}
                         </h4>
-                        <div className="">
+                        <div className="mb-2">
                         {selected === i ?  <FaAngleUp className=''/> :  <FaAngleDown className=''/>}  
                         </div>
                        
                     </div>
-                    <div className={selected === i ? 'contents show pb-2' : 'contents'} >
+                    <div className={selected === i ? 'contents show pb-2 text-secondary' : 'contents'} >
                           {item.answer}
                     </div>
                 </div>

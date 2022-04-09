@@ -273,7 +273,7 @@ function Editor(props) {
           placeholder="Dec 2021"
           type="text"
           value={values.endDate}
-          disabled={!isDisabled}
+          disabled={isDisabled}
           onChange={(event) =>
             setValues((prev) => ({ ...prev, endDate: event.target.value }))
           }

@@ -13,7 +13,7 @@ export default class Footer extends Component{
       <div className="col-lg-6">
         <h4>Join Our Newsletter</h4>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit nemo expedita voluptas culpa sapiente.</p>
-        <form action="" method="post">
+        <form>
           <input type="email" className='rounded' name="email"/><input type="submit" className='rounded-3 btn btn-primary' value="Subscribe"/>
         </form>
       </div>
@@ -25,16 +25,20 @@ export default class Footer extends Component{
   <div className="container">
     <div className="row">
 
-      <div className="col-lg-3 col-md-6 footer-contact">
-      <div className="logo">
+      <div className="col-lg-3 col-md-6 footer-contact mt-3">
+      <div className="logo mb-4">
             <span>rBuilder</span>
         </div>
-        <p>
-          Akwa Ibom, Uyo 535022<br/>
-          Nigeria <br/><br/>
-          <strong>Phone:</strong> +234 81 5967 5934<br/>
-          <strong>Email:</strong> Bros@gmail.com<br/>
-        </p>
+        <div>
+          Akwa Ibom, Uyo 535022
+          <br/>
+          Nigeria 
+          <br/><br/>
+          <div className='d-flex'>Phone: <a className='text-decoration-none ms-2' href="tel://+2348159675934">+234 815 967 5934</a></div>
+          <br/>
+          <div className='d-flex'>Email: <a className='text-decoration-none ms-2' href="mailto:williamsgodsfavoursolomon@gmail.com">Here !</a></div>
+          <br/>
+        </div>
       </div>
 
       <div className="col-lg-3 col-md-6 footer-links">
@@ -78,7 +82,7 @@ export default class Footer extends Component{
 <div className="container footer-bottom d-flex align-items-center justify-content-center">
   <div className="copyright">
     &copy; Copyright <strong><span>rBuilder</span></strong>. All Rights Reserved
-    Designed by <a href="/" className='text-decoration-none fw-bold'>Williams Godsfavour</a>
+    Designed by <a href="/" className='text-decoration-none fw-bold'>Williams Godsfavour Solomon</a>
   </div>
 </div>
 </footer>
