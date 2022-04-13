@@ -31,7 +31,6 @@ const Navbar = () => {
 
   useEffect(() => {
     if (loading) return;
-
     fetchUserName();
   });
 
