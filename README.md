@@ -7,7 +7,7 @@
 
 
 ## About
-[Resume Builder](https://) is a free open-source project that allows anyone to easily maintain and build any kind of resume . This was develop as a personal project to help a friend who was struggling spending up to an hour to make a custom resumes. **[TRY IT NOW](/).**
+[Resume Builder](https://theresumebuilder.netlify.app) is a free open-source project that allows anyone to easily maintain and build any kind of resume . This was develop as a personal project to help a friend who was struggling spending up to an hour to make a custom resumes. **[TRY IT NOW](https://theresumebuilder.netlify.app).**
 
 
 
